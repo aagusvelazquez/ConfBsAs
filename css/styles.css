@@ -1,0 +1,1329 @@
+:root {
+    --bgcolor:  #353A40;
+    --textcolor: white;
+    --bgbotton: #29A744;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: var(--bgcolor);
+    height: 5em;
+    color: var(--textcolor);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    .logo {
+        display: inline-block;
+        margin: .5em 2em;
+        & img {
+            height: 4em;
+            vertical-align: middle;
+        }
+        & h2 {
+            display: inline-block;
+            font-size: 2em;
+        }
+    }
+    & nav {
+        float: right;
+        padding: 1.5em;
+        & a {
+            text-decoration: none;
+            color: var(--textcolor);
+            margin: 0 .5em;
+        }
+        .ticket {
+            color: var(--bgbotton);
+        }
+    }
+}
+main {
+    #conferencia {
+        position: relative;
+        & img {
+            filter: brightness(0.5);
+            width: 100%;
+        }
+        .contenido-principal {
+            position: absolute;
+            top: 50vh;
+            color: var(--textcolor);
+            text-align: right;
+            right: 5%;
+            width: 40%;
+            line-height: 1.5em;
+            & h1 {
+                font-size: 4em;
+            }
+            & p {
+                font-size: 1.5em;
+                margin: 1.5em 0;
+                line-height: 1.3em;
+            }
+        }
+        & a {
+            text-decoration: none;
+            border: 1px solid var(--textcolor);
+            border-radius: 5px;
+            color: var(--textcolor);
+            font-size: 1.5em;
+            padding: 10px 15px;
+            margin: 0 0.5em;
+        }
+        .btn-color {
+            background-color: var(--bgbotton);
+            border: 1px solid var(--bgbotton);
+        }
+    }
+    .grid-content {
+        display: grid;
+        grid-template-areas: 'orador orador'
+                             'paisaje descrip'
+                             'formulario formulario';
+        /* Columnas para la sección 'paisaje descrip' */
+        grid-template-columns: 50% 50%;
+        /* Descripción de medidas para las áreas */
+        grid-template-rows: 50% 30% auto;
+        .item-1 {
+            grid-area: orador;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+            .title {
+                text-align: center;
+                & h4 {
+                    font-size: 0.8em;
+                    font-weight: lighter;
+                }
+                & h2 {
+                    font-size: 2em;
+                    font-weight: lighter;
+                    margin: 10px;
+        
+                }
+            }
+            .contenido-tarjeta {
+                display: flex;
+                width: 100%;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                & div[class^='tarjeta'] {
+                    width: 320px;
+                    border: 1px solid #acacac;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    & img {
+                        width: 100%;
+                    }
+                    .contenido {
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin: 10px;
+                        .contenido-text {
+                            display: flex;
+                            flex-flow: column nowrap;
+                            margin: 5px;
+                            & p {
+                                margin: 15px 0px;
+                                font-size: 1em;
+                                line-height: 1.5em;
+                            }
+                        }
+                        .btn-javascript {
+                            text-decoration: none;
+                            background-color: rgb(255, 217, 48);
+                            color: black;
+                            font-size: 0.7em;
+                            font-weight: bolder;
+                            border-radius: 5px;
+                            padding: 3px 5px;
+                            margin: 0.5em;
+                        }
+                        .btn-react {
+                            text-decoration: none;
+                            background-color: rgb(48, 165, 255);
+                            color: var(--textcolor);
+                            font-size: 0.7em;
+                            font-weight: bolder;
+                            border-radius: 5px;
+                            padding: 3px 8px;
+                            margin: 0.5em;
+                        }
+                        .btn-negocios {
+                            text-decoration: none;
+                            background-color: var(--bgcolor);
+                            color: var(--textcolor);
+                            font-size: 0.7em;
+                            font-weight: bolder;
+                            border-radius: 5px;
+                            padding: 3px 5px;
+                            margin: 0.5em;
+                        }
+                        .btn-startups {
+                            text-decoration: none;
+                            background-color: rgb(206, 12, 12);
+                            color: var(--textcolor);
+                            font-size: 0.7em;
+                            font-weight: bolder;
+                            border-radius: 5px;
+                            padding: 3px 5px;
+                            margin: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+        .item-2 {
+            grid-area: paisaje;
+            border: 1px solid var(--textcolor);
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .item-3 {
+            grid-area: descrip;
+            background-color: var(--bgcolor);
+            color: var(--textcolor);
+            border: 1px solid var(--textcolor);
+            padding: 1em;
+            line-height: 1.5em;
+            text-align: left;
+                & p {
+                    margin: 1.5em 0;
+                }
+            .btn-conoce-mas {
+                text-decoration: none;
+                border: 1px solid var(--textcolor);
+                border-radius: 5px;
+                color: var(--textcolor);
+                padding: 10px 15px;
+            }
+        }
+        .item-4 {
+            grid-area: formulario;
+            width: 50%;
+            margin: 0 auto;
+            padding: 1em;
+            .title-form {
+                text-align: center;
+                margin: 0;
+                line-height: 10px;
+            & h4 {
+                font-size: 0.8em;
+                font-weight: lighter;
+            }
+            & h2 {
+                font-size: 2em;
+                font-weight: lighter;
+                margin: 10px;
+            }
+            & p {
+                font-size: 0.9em;
+                margin-top: 25px;
+            }
+            }
+            .formulario {
+                list-style: none;
+                margin-top: .7em;
+                & #nombre {
+                    width: 49%;
+                    height: 2em;
+                    margin: 0;
+                    border-radius: 5px;
+                    border: 1px solid lightgray;
+                }
+                & #apellido {
+                    width: 50%;
+                    height: 2em;
+                    border-radius: 5px;
+                    border: 1px solid lightgray;
+                }
+                & #tema-charla {
+                    width: 100%;
+                    height: 10em;
+                    margin: 1em 0;
+                    border-radius: 5px;
+                    border: 1px solid lightgray;
+                }
+                & #recordatorio {
+                    font-size: 1em;
+                    padding: .3em;
+                    font-size: 0.7em;
+                    color: #acacac;
+                }
+                & .btn-color {
+                    display: block;
+                    text-decoration: none;
+                    background: linear-gradient(#95e152, #5cb90b);
+                    border: #95e152 1px solid;
+                    font-size: 1.1em;
+                    color: var(--textcolor);
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 2.5em;
+                    padding: .5em 2em;
+                    margin: 1em 0 0 0;
+                }
+                & .btn-color:hover {
+                    background: linear-gradient(#5cb90b, #95e152);
+                    border: #95e152 1px solid;
+                }
+            }
+        }
+    }
+}
+footer {
+    background-color: var(--bgcolor);
+    height: 4em;
+    color: var(--textcolor);
+    width: 100%;
+    margin-top: 6em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    & a {
+        text-decoration: none;
+        color: var(--textcolor);
+        font-size: 1.5em;
+    }
+}
+/* MEDIA QUERIES */
+/* Dispositivos Móviles: 320px — 480px */
+@media (min-width: 320px) and (max-width: 376px){
+    header {
+        height: 2em;
+        .logo {
+            margin-left: .5em;
+            margin-top: .1em;
+            & img {
+                height: 1em;
+                margin: 0;
+                padding: 0;
+                vertical-align: middle;
+            }
+            & h2 {
+                font-size: .5em;
+                display: inline-block;
+            }
+        }
+        & nav {
+            float: none;
+            text-align: center;
+            padding: 0;
+            & a {
+                font-size: .4em;
+                margin: 0;
+            }
+        }
+    }
+    main {
+        #conferencia {
+            position: relative;
+            & .img {
+                width: 100%;
+            }
+            .contenido-principal {
+                top: 30%;
+                right: 10%;
+                width: 60%;
+                line-height: 1.5em;
+                & h1 {
+                    font-size: .8em;
+                }
+                & p {
+                    font-size: .4em;
+                    line-height: 10px;
+                    margin: .7em 0;
+                }
+                & a {
+                    text-decoration: none;
+                    font-size: .4em;
+                    border: 1px solid var(--textcolor);
+                    border-radius: 5px;
+                    color: var(--textcolor);
+                    padding: .5em 2em;
+                    margin: 0 0.5em;
+                }
+                .btn-color {
+                    background-color: var(--bgbotton);
+                    border: 1px solid var(--bgbotton);
+                }
+            }
+        }
+        .grid-content {
+            display: grid;
+            grid-template-areas: 'orador orador'
+                                 'paisaje descrip'
+                                 'formulario formulario';
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 40% 22% auto;
+            
+            .item-1 {
+                margin: 0;
+                .title {
+                    text-align: center;
+                    & h4 {
+                        font-size: 0.3em;
+                    }
+                    & h2 {
+                        font-size: 0.7em;
+                        margin: .3em;
+                    }
+                }
+                .contenido-tarjeta {
+                    & div[class^='tarjeta'] {
+                        width: 6em;
+                        height: 12em;
+                        & img {
+                            width: 100%;
+                        }
+                        .contenido {
+                            margin: .3em;
+                            .contenido-text {
+                                display: flex;
+                                flex-flow: column nowrap;
+                                margin: 0;
+                                & h4 {
+                                    font-size: .4em;
+                                    margin-top: .7em;
+                                }
+                                & p {
+                                    margin: .5em .2em;
+                                    font-size: .4em;
+                                    line-height: 1em;
+                                }
+                            }
+                            .btn-javascript {
+                                font-size: .1em;
+                                font-weight: lighter;
+                                border-radius: 2px;
+                                padding: 1em 3em;
+                                margin: 0.2em;
+                            }
+                            .btn-react {
+                                font-size: .1em;
+                                font-weight: lighter;
+                                border-radius: 2px;
+                                padding: 1em 3em;
+                                margin: 0 3em;
+                            }
+                            .btn-negocios {
+                                font-size: .1em;
+                                font-weight: lighter;
+                                border-radius: 2px;
+                                padding: 1em 3em;
+                                margin: .2em;
+                            }
+                            .btn-startups {
+                                font-size: .1em;
+                                font-weight: lighter;
+                                border-radius: 2px;
+                                padding: 1em 3em;
+                                margin: 0 3em;
+                            }
+                        }
+                    }
+                }
+            }
+            .item-3 {
+                padding: .5em .7em;
+                line-height: 1.5em;
+                text-align: left;
+                & h1 {
+                    font-size: 1em;
+                }
+                & p {
+                    font-size: .5em;
+                    line-height: normal;
+                    margin: .5em 0;
+                }
+                .btn-conoce-mas {
+                    border-radius: 4px;
+                    font-size: .5em;
+                    padding: .5em .7em;
+                }
+            }
+            .item-4 {
+                width: 100%;
+                margin: .4em auto;
+                padding: 1em;
+                .title-form {
+                    text-align: center;
+                    margin: 0;
+                    line-height: 6px;
+                & h4 {
+                    font-size: .4em;
+                }
+                & h2 {
+                    font-size: 1em;
+                }
+                & p {
+                    font-size: .5em;
+                    margin-top: 1em;
+                }
+                }
+                .formulario {
+                    margin-top: .7em;
+                    #nombre {
+                        width: 49%;
+                        height: 1em;
+                        margin: 0;
+                        border-radius: 3px;
+                    }
+                    #apellido {
+                        width: 48%;
+                        height: 1em;
+                        margin: 0;
+                        border-radius: 3px;
+                    }
+                    #tema-charla {
+                        width: 95%;
+                        height: 5em;
+                        margin: .3em;
+                        padding: 0;
+                        border-radius: 3px;
+                    }
+                    #recordatorio {
+                        font-size: .5em;
+                        margin: 0;
+                        padding: .3em;
+                    }
+                    .btn-color {
+                        display: block;
+                        width: 100%;
+                        border-radius: 5px;
+                        font-size: .7em;
+                        padding: .5em 2em;
+                        margin: .4em 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        height: 2em;
+        width: 100%;
+        margin: 0;
+        & a {
+            font-size: .3em;
+        }
+    }
+}
+@media (min-width: 377px) and (max-width: 480px){
+    header {
+        height: 3em;
+        .logo {
+            margin-left: .5em;
+            margin-top: .1em;
+            & img {
+                height: 1.2em;
+                margin: 0;
+                padding: 0;
+                vertical-align: middle;
+            }
+            & h2 {
+                font-size: .8em;
+                display: inline-block;
+            }
+        }
+        & nav {
+            float: none;
+            text-align: center;
+            padding: 0 0;
+            & a {
+                font-size: .5em;
+                margin: .3em;
+            }
+        }
+    }
+    main {
+        #conferencia {
+            .contenido-principal {
+                top: 30%;
+                right: 10%;
+                width: 60%;
+                line-height: 1.5em;
+                & h1 {
+                    font-size: 1em;
+                }
+                & p {
+                    font-size: .5em;
+                    line-height: 10px;
+                    margin: .7em 0;
+                }
+                & a {
+                    text-decoration: none;
+                    font-size: .5em;
+                    border: 1px solid var(--textcolor);
+                    border-radius: 5px;
+                    color: var(--textcolor);
+                    padding: .5em 2em;
+                    margin: 0 0.5em;
+                }
+                .btn-color {
+                    background-color: var(--bgbotton);
+                    border: 1px solid var(--bgbotton);
+                }
+            }
+        }
+        .grid-content {
+            display: grid;
+            grid-template-areas: 'orador orador'
+                                 'paisaje descrip'
+                                 'formulario formulario';
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 40% 22% auto;
+            .item-1 {
+                margin: 0;
+                .title {
+                    text-align: center;
+                    & h4 {
+                        font-size: 0.3em;
+                    }
+                    & h2 {
+                        font-size: 0.7em;
+                        margin: .3em;
+                    }
+                }
+                .contenido-tarjeta {
+                    & div[class^='tarjeta'] {
+                        width: 7em;
+                        height: 13em;
+                        & img {
+                            width: 100%;
+                        }
+                        .contenido {
+                            margin: .3em;
+                            .contenido-text {
+                                display: flex;
+                                flex-flow: column nowrap;
+                                margin: 0;
+                                & h4 {
+                                    font-size: .4em;
+                                    margin-top: .7em;
+                                }
+                                & p {
+                                    margin: .5em .2em;
+                                    font-size: .4em;
+                                    line-height: 1em;
+                                }
+                            }
+                            .btn-javascript {
+                                font-size: .1em;
+                                font-weight: lighter;
+                                border-radius: 2px;
+                                padding: 1em 3em;
+                                margin: 0.2em;
+                            }
+                            .btn-react {
+                                font-size: .1em;
+                                font-weight: lighter;
+                                border-radius: 2px;
+                                padding: 1em 3em;
+                                margin: 0 3em;
+                            }
+                            .btn-negocios {
+                                font-size: .1em;
+                                font-weight: lighter;
+                                border-radius: 2px;
+                                padding: 1em 3em;
+                                margin: .2em;
+                            }
+                            .btn-startups {
+                                font-size: .1em;
+                                font-weight: lighter;
+                                border-radius: 2px;
+                                padding: 1em 3em;
+                                margin: 0 3em;
+                            }
+                        }
+                    }
+                }
+            }
+            .item-3 {
+                padding: .5em .7em;
+                line-height: 1.5em;
+                text-align: left;
+                & h1 {
+                    font-size: 1em;
+                }
+                & p {
+                    font-size: .5em;
+                    line-height: normal;
+                    margin: .5em 0;
+                }
+                .btn-conoce-mas {
+                    border-radius: 4px;
+                    font-size: .5em;
+                    padding: .5em .7em;
+                }
+            }
+            .item-4 {
+                width: 100%;
+                margin: .4em auto;
+                padding: 1em;
+                .title-form {
+                    text-align: center;
+                    margin: 0;
+                    line-height: 6px;
+                & h4 {
+                    font-size: .4em;
+                }
+                & h2 {
+                    font-size: 1em;
+                }
+                & p {
+                    font-size: .5em;
+                    margin-top: 1em;
+                }
+                }
+                .formulario {
+                    margin-top: .7em;
+                    #nombre {
+                        width: 49%;
+                        height: 1em;
+                        margin: 0;
+                        border-radius: 3px;
+                    }
+                    #apellido {
+                        width: 48%;
+                        height: 1em;
+                        margin: 0;
+                        border-radius: 3px;
+                    }
+                    #tema-charla {
+                        width: 100%;
+                        height: 5em;
+                        margin: .3em;
+                        padding: 0;
+                        border-radius: 3px;
+                    }
+                    #recordatorio {
+                        font-size: .5em;
+                        margin: 0;
+                        padding: .3em;
+                    }
+                    .btn-color {
+                        display: block;
+                        width: 100%;
+                        border-radius: 5px;
+                        font-size: .7em;
+                        padding: .5em 2em;
+                        margin: .4em 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        height: 2em;
+        width: 100%;
+        margin: 0;
+        & a {
+            font-size: .5em;
+        }
+    }
+}
+/* iPads y Tablets: 481px — 768px */
+@media (min-width: 481px) and (max-width: 767px){
+    header {
+        height: 3.5em;
+        .logo {
+            margin-left: .5em;
+            margin-top: .5em;
+            & img {
+                height: 1.5em;
+                vertical-align: middle;
+            }
+            & h2 {
+                font-size: .8em;
+                display: inline-block;
+            }
+        }
+        & nav {
+            float: none;
+            text-align: center;
+            padding: 0;
+            & a {
+                font-size: .5em;
+                margin: 0;
+            }
+        }
+    }
+    main {
+        #conferencia {
+            position: relative;
+            & img {
+                width: 100%;
+            }
+            .contenido-principal {
+                top: 30%;
+                right: 10%;
+                width: 60%;
+                line-height: 1.5em;
+                & h1 {
+                    font-size: 1.5em;
+                }
+                & p {
+                    font-size: .7em;
+                    line-height: 1.4em;
+                    margin: 1em 0;
+                }
+                & a {
+                    text-decoration: none;
+                    font-size: .7em;
+                    border: 1px solid var(--textcolor);
+                    border-radius: 6px;
+                    color: var(--textcolor);
+                    padding: .5em 1.5em;
+                    margin: 1em;
+                }
+                .btn-color {
+                    background-color: var(--bgbotton);
+                    border: 1px solid var(--bgbotton);
+                }
+            }
+        }
+        .grid-content {
+            display: grid;
+            grid-template-areas: 'orador orador'
+                                 'paisaje descrip'
+                                 'formulario formulario';
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 20% auto;
+            .item-1 {
+                margin: 0;
+                .title {
+                    text-align: center;
+                    & h4 {
+                        font-size: 1em;
+                    }
+                    & h2 {
+                        font-size: 2em;
+                        margin: .3em;
+                    }
+                }
+                .contenido-tarjeta {
+                    & div[class^='tarjeta'] {
+                        width: 8em;
+                        height: 16em;
+                        & img {
+                            width: 100%;
+                        }
+                        .contenido {
+                            margin: .3em;
+                            .contenido-text {
+                                display: flex;
+                                flex-flow: column nowrap;
+                                margin: 0;
+                                & h4 {
+                                    font-size: .7em;
+                                    margin-top: .3em;
+                                }
+                                & p {
+                                    margin: .4em .2em;
+                                    font-size: .5em;
+                                    line-height: 1em;
+                                }
+                            }
+                            .btn-javascript {
+                                font-size: .2em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: 1em 2em;
+                                margin: .2em;
+                            }
+                            .btn-react {
+                                font-size: .2em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: 1em 2em;
+                                margin: 0 1em;
+                            }
+                            .btn-negocios {
+                                font-size: .2em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: 1em 2em;
+                                margin: .2em;
+                            }
+                            .btn-startups {
+                                font-size: .2em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: 1em 2em;
+                                margin: 0 1em;
+                            }
+                        }
+                    }
+                }
+            }
+            .item-3 {
+                padding: .5em .7em;
+                text-align: left;
+                line-height: 1.5em;
+                & h1 {
+                    font-size: 1em;
+                }
+                & p {
+                    font-size: .6em;
+                    line-height: 1.3em;
+                    margin: .5em 0;
+                    margin-bottom: 0;
+                }
+                .btn-conoce-mas {
+                    border-radius: 4px;
+                    font-size: .6em;
+                    padding: .3em .7em;
+                }
+            }
+            .item-4 {
+                width: 80%;
+                .title-form {
+                    text-align: center;
+                    line-height: .8em;
+                & h4 {
+                    font-size: .6em;
+                }
+                & h2 {
+                    font-size: 1.7em;
+                }
+                & p {
+                    font-size: .6em;
+                    margin-top: 1em;
+                }
+                }
+                .formulario {
+                    margin-top: .7em;
+                    #nombre {
+                        width: 49%;
+                        height: 1.5em;
+                    }
+                    #apellido {
+                        width: 49%;
+                        height: 1.5em;
+                    }
+                    #tema-charla {
+                        height: 8em;
+                        border-radius: 5px;
+                    }
+                    #recordatorio {
+                        font-size: .6em;
+                        padding: 0;
+                    }
+                    .btn-color {
+                        font-size: .8em;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        height: 2em;
+        width: 100%;
+        & a {
+            font-size: .5em;
+        }
+    }
+}
+/* Pantallas pequeñas, laptops: 769px — 1023px */
+@media (min-width: 768px) and (max-width: 1023px){
+    header {
+        height: 4em;
+        .logo {
+            margin-left: .5em;
+            margin-top: 1em;
+            & img {
+                height: 2em;
+                vertical-align: middle;
+            }
+            & h2 {
+                font-size: 1.3em;
+            }
+        }
+        & nav {
+            float: right;
+            & a {
+                font-size: .8em;
+                margin: 0;
+            }
+        }
+    }
+    main {
+        #conferencia {
+            .contenido-principal {
+                top: 30%;
+                right: 10%;
+                width: 50%;
+                line-height: 2em;
+                & h1 {
+                    font-size: 1.8em;
+                }
+                & p {
+                    font-size: .8em;
+                    line-height: 1.5em;
+                    margin: 1em 0;
+                }
+                & a {
+                    text-decoration: none;
+                    font-size: .9em;
+                    border: 1px solid var(--textcolor);
+                    border-radius: 5px;
+                    color: var(--textcolor);
+                    padding: .5em 1.5em;
+                    margin: 1em;
+                }
+                .btn-color {
+                    background-color: var(--bgbotton);
+                    border: 1px solid var(--bgbotton);
+                }
+            }
+        }
+        .grid-content {
+            display: grid;
+            grid-template-areas: 'orador orador'
+                                 'paisaje descrip'
+                                 'formulario formulario';
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 40% 20% auto;
+            .item-1 {
+                margin: 0;
+                .title {
+                    text-align: center;
+                    & h4 {
+                        font-size: 1em;
+                    }
+                    & h2 {
+                        font-size: 2em;
+                        margin: .3em;
+                    }
+                }
+                .contenido-tarjeta {
+                    & div[class^='tarjeta'] {
+                        width: 10em;
+                        height: 18em;
+                        & img {
+                            width: 100%;
+                        }
+                        .contenido {
+                            margin: .3em;
+                            .contenido-text {
+                                display: flex;
+                                flex-flow: column nowrap;
+                                margin: 0;
+                                & h4 {
+                                    font-size: .8em;
+                                    margin-top: .3em;
+                                }
+                                & p {
+                                    margin: .4em .2em;
+                                    font-size: .6em;
+                                    line-height: 1em;
+                                }
+                            }
+                            .btn-javascript {
+                                font-size: .2em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: 1em 2em;
+                                margin: .2em;
+                            }
+                            .btn-react {
+                                font-size: .2em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: 1em 2em;
+                                margin: 0 1em;
+                            }
+                            .btn-negocios {
+                                font-size: .2em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: 1em 2em;
+                                margin: .2em;
+                            }
+                            .btn-startups {
+                                font-size: .2em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: 1em 2em;
+                                margin: 0 1em;
+                            }
+                        }
+                    }
+                }
+            }
+            .item-3 {
+                padding: 1.3em .7em;
+                text-align: left;
+                line-height: 1.5em;
+                & h1 {
+                    font-size: 1.5em;
+                }
+                & p {
+                    font-size: .8em;
+                    line-height: 1.3em;
+                    margin: .5em 0;
+                    margin-bottom: 1.5em;
+                }
+                .btn-conoce-mas {
+                    border-radius: 4px;
+                    font-size: .8em;
+                    padding: .3em .7em;
+                }
+            }
+            .item-4 {
+                width: 90%;
+                .title-form {
+                    text-align: center;
+                    line-height: 1em;
+                & h4 {
+                    font-size: .7em;
+                }
+                & h2 {
+                    font-size: 1.7em;
+                }
+                & p {
+                    font-size: .8em;
+                    margin-top: 1em;
+                }
+                }
+                .formulario {
+                    margin-top: .7em;
+                    #nombre {
+                        height: 2em;
+                    }
+                    #apellido {
+                        height: 2em;
+                    }
+                    #tema-charla {
+                        height: 8em;
+                        border-radius: 5px;
+                    }
+                    #recordatorio {
+                        font-size: .8em;
+                        padding: .3em;
+                    }
+                    .btn-color {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        height: 2.8em;
+        width: 100%;
+        margin: 0;
+        & a {
+            font-size: .9em;
+        }
+    }
+}
+/* Computadoras de escritorio, pantallas grandes: 1024px — 1200px */
+@media (min-width: 1024px) and (max-width: 1200px){
+    header {
+        height: 5em;
+        .logo {
+            margin-left: 1em;
+            margin-top: 1em;
+            & img {
+                height: 3em;
+                vertical-align: middle;
+            }
+            & h2 {
+                font-size: 2em;
+            }
+        }
+        & nav {
+            float: right;
+            padding: 2em;
+            & a {
+                font-size: 1em;
+                margin: .3em;
+            }
+        }
+    }
+    main {
+        #conferencia {
+            .contenido-principal {
+                top: 30%;
+                right: 10%;
+                width: 70%;
+                line-height: 2em;
+                & h1 {
+                    font-size: 3em;
+                }
+                & p {
+                    font-size: 1.5em;
+                    line-height: 1.4em;
+                    margin: 1em 0;
+                }
+                & a {
+                    text-decoration: none;
+                    font-size: 1.5em;
+                    border: 1px solid var(--textcolor);
+                    border-radius: 5px;
+                    color: var(--textcolor);
+                    padding: .5em 1.5em;
+                    margin: 1em;
+                }
+                .btn-color {
+                    background-color: var(--bgbotton);
+                    border: 1px solid var(--bgbotton);
+                }
+            }
+        }
+        .grid-content {
+            display: grid;
+            grid-template-areas: 'orador orador'
+                                 'paisaje descrip'
+                                 'formulario formulario';
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 47% 20% auto;
+            .item-1 {
+                margin: 0;
+                .title {
+                    text-align: center;
+                    margin: .5em;
+                    & h4 {
+                        font-size: 1em;
+                    }
+                    & h2 {
+                        font-size: 2em;
+                        margin: .1em;
+                    }
+                }
+                .contenido-tarjeta {
+                    & div[class^='tarjeta'] {
+                        width: 15em;
+                        height: 27em;
+                        & img {
+                            width: 100%;
+                        }
+                        .contenido {
+                            margin: .3em;
+                            .contenido-text {
+                                display: flex;
+                                flex-flow: column nowrap;
+                                margin: 0;
+                                & h4 {
+                                    font-size: 1.3em;
+                                    margin-top: .3em;
+                                }
+                                & p {
+                                    margin: .4em .2em;
+                                    font-size: .9em;
+                                    line-height: 1em;
+                                }
+                            }
+                            .btn-javascript {
+                                font-size: .8em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: .4em .4em;
+                                margin: .2em;
+                            }
+                            .btn-react {
+                                font-size: .8em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: .4em .5em;
+                                margin: 0 .3em;
+                            }
+                            .btn-negocios {
+                                font-size: .8em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: .4em .4em;
+                                margin: .2em;
+                            }
+                            .btn-startups {
+                                font-size: .8em;
+                                font-weight: bolder;
+                                border-radius: 2px;
+                                padding: .4em .5em;
+                                margin: 0 .3em;
+                            }
+                        }
+                    }
+                }
+            }
+            .item-3 {
+                padding: 1.3em .7em;
+                text-align: left;
+                line-height: 1.5em;
+                & h1 {
+                    font-size: 1.5em;
+                }
+                & p {
+                    font-size: 1em;
+                    line-height: 1.5em;
+                    margin: .5em 0;
+                    margin-bottom: 1.5em;
+                }
+                .btn-conoce-mas {
+                    border-radius: 4px;
+                    font-size: 1em;
+                    padding: .3em .7em;
+                }
+            }
+            .item-4 {
+                width: 90%;
+                .title-form {
+                    text-align: center;
+                    line-height: 1em;
+                & h4 {
+                    font-size: .8em;
+                }
+                & h2 {
+                    font-size: 2em;
+                }
+                & p {
+                    font-size: 1em;
+                    margin-top: 1em;
+                }
+                }
+                .formulario {
+                    margin-top: .7em;
+                    #nombre {
+                        height: 2.5em;
+                    }
+                    #apellido {
+                        height: 2.5em;
+                    }
+                    #tema-charla {
+                        height: 10em;
+                        border-radius: 5px;
+                    }
+                    #recordatorio {
+                        font-size: 1em;
+                        padding: .3em;
+                    }
+                    .btn-color {
+                        font-size: 1.4em;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        height: 3em;
+        width: 100%;
+        margin: 0;
+        & a {
+            font-size: 1.1em;
+        }
+    }
+}
