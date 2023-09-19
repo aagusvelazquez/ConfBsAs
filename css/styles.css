@@ -9,93 +9,20 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-header {
-    background-color: var(--bgcolor);
-    height: 5em;
-    color: var(--textcolor);
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    .logo {
-        display: inline-block;
-        margin: .5em 2em;
-        & img {
-            height: 4em;
-            vertical-align: middle;
-        }
-        & h2 {
-            display: inline-block;
-            font-size: 2em;
-        }
-    }
-    & nav {
-        float: right;
-        padding: 1.5em;
-        & a {
-            text-decoration: none;
-            color: var(--textcolor);
-            margin: 0 .5em;
-        }
-        .ticket {
-            color: var(--bgbotton);
-        }
-    }
+.navbar {
+    background-color: #333b43;
 }
 main {
-    #conferencia {
-        position: relative;
-        & img {
-            filter: brightness(0.5);
-            width: 100%;
-        }
-        .contenido-principal {
-            position: absolute;
-            top: 50vh;
-            color: var(--textcolor);
-            text-align: right;
-            right: 5%;
-            width: 40%;
-            line-height: 1.5em;
-            & h1 {
-                font-size: 4em;
-            }
-            & p {
-                font-size: 1.5em;
-                margin: 1.5em 0;
-                line-height: 1.3em;
-            }
-        }
-        & a {
-            text-decoration: none;
-            border: 1px solid var(--textcolor);
-            border-radius: 5px;
-            color: var(--textcolor);
-            font-size: 1.5em;
-            padding: 10px 15px;
-            margin: 0 0.5em;
-        }
-        .btn-color {
-            background-color: var(--bgbotton);
-            border: 1px solid var(--bgbotton);
-        }
+    .img-carousel {
+        filter: brightness(0.5);
     }
-    .grid-content {
-        display: grid;
-        grid-template-areas: 'orador orador'
-                             'paisaje descrip'
-                             'formulario formulario';
-        /* Columnas para la sección 'paisaje descrip' */
-        grid-template-columns: 50% 50%;
-        /* Descripción de medidas para las áreas */
-        grid-template-rows: 50% 30% auto;
-        .item-1 {
-            grid-area: orador;
+    .item-1 {
             display: flex;
             flex-flow: row wrap;
             align-content: center;
             justify-content: space-evenly;
             align-items: center;
+            margin-top: 1em;
             .title {
                 text-align: center;
                 & h4 {
@@ -109,82 +36,14 @@ main {
         
                 }
             }
-            .contenido-tarjeta {
-                display: flex;
-                width: 100%;
-                flex-flow: row wrap;
-                justify-content: space-evenly;
-                align-items: center;
-                & div[class^='tarjeta'] {
-                    width: 320px;
-                    border: 1px solid #acacac;
-                    border-radius: 6px;
-                    overflow: hidden;
-                    & img {
-                        width: 100%;
-                    }
-                    .contenido {
-                        display: flex;
-                        flex-flow: row wrap;
-                        justify-content: flex-start;
-                        align-items: center;
-                        margin: 10px;
-                        .contenido-text {
-                            display: flex;
-                            flex-flow: column nowrap;
-                            margin: 5px;
-                            & p {
-                                margin: 15px 0px;
-                                font-size: 1em;
-                                line-height: 1.5em;
-                            }
-                        }
-                        .btn-javascript {
-                            text-decoration: none;
-                            background-color: rgb(255, 217, 48);
-                            color: black;
-                            font-size: 0.7em;
-                            font-weight: bolder;
-                            border-radius: 5px;
-                            padding: 3px 5px;
-                            margin: 0.5em;
-                        }
-                        .btn-react {
-                            text-decoration: none;
-                            background-color: rgb(48, 165, 255);
-                            color: var(--textcolor);
-                            font-size: 0.7em;
-                            font-weight: bolder;
-                            border-radius: 5px;
-                            padding: 3px 8px;
-                            margin: 0.5em;
-                        }
-                        .btn-negocios {
-                            text-decoration: none;
-                            background-color: var(--bgcolor);
-                            color: var(--textcolor);
-                            font-size: 0.7em;
-                            font-weight: bolder;
-                            border-radius: 5px;
-                            padding: 3px 5px;
-                            margin: 0.5em;
-                        }
-                        .btn-startups {
-                            text-decoration: none;
-                            background-color: rgb(206, 12, 12);
-                            color: var(--textcolor);
-                            font-size: 0.7em;
-                            font-weight: bolder;
-                            border-radius: 5px;
-                            padding: 3px 5px;
-                            margin: 0.5em;
-                        }
-                    }
-                }
-            }
         }
+    #lugar {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: stretch;
+        margin-top: 2em;
         .item-2 {
-            grid-area: paisaje;
             border: 1px solid var(--textcolor);
             & img {
                 width: 100%;
@@ -192,7 +51,6 @@ main {
             }
         }
         .item-3 {
-            grid-area: descrip;
             background-color: var(--bgcolor);
             color: var(--textcolor);
             border: 1px solid var(--textcolor);
@@ -210,11 +68,11 @@ main {
                 padding: 10px 15px;
             }
         }
-        .item-4 {
-            grid-area: formulario;
+    }
+    .item-4 {
             width: 50%;
             margin: 0 auto;
-            padding: 1em;
+            margin-top: 1em;
             .title-form {
                 text-align: center;
                 margin: 0;
@@ -280,97 +138,38 @@ main {
                     border: #95e152 1px solid;
                 }
             }
-        }
     }
 }
 footer {
-    background-color: var(--bgcolor);
+    background: linear-gradient( to right, #1c3c44,  #4e758b);
     height: 4em;
     color: var(--textcolor);
     width: 100%;
-    margin-top: 6em;
+    margin-top: 2em;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     & a {
         text-decoration: none;
         color: var(--textcolor);
-        font-size: 1.5em;
+        font-size: 1em;
+    }
+    & a:hover {
+        text-shadow: -6px 7px 10px rgba(0,0,0,.6);
+        color: var(--textcolor);
     }
 }
 /* MEDIA QUERIES */
 /* Dispositivos Móviles: 320px — 480px */
 @media (min-width: 320px) and (max-width: 376px){
-    header {
-        height: 2em;
-        .logo {
-            margin-left: .5em;
-            margin-top: .1em;
-            & img {
-                height: 1em;
-                margin: 0;
-                padding: 0;
-                vertical-align: middle;
-            }
-            & h2 {
-                font-size: .5em;
-                display: inline-block;
-            }
-        }
-        & nav {
-            float: none;
-            text-align: center;
-            padding: 0;
-            & a {
-                font-size: .4em;
-                margin: 0;
-            }
-        }
-    }
     main {
-        #conferencia {
-            position: relative;
-            & .img {
-                width: 100%;
-            }
-            .contenido-principal {
-                top: 30%;
-                right: 10%;
-                width: 60%;
-                line-height: 1.5em;
-                & h1 {
-                    font-size: .8em;
-                }
-                & p {
-                    font-size: .4em;
-                    line-height: 10px;
-                    margin: .7em 0;
-                }
-                & a {
-                    text-decoration: none;
-                    font-size: .4em;
-                    border: 1px solid var(--textcolor);
-                    border-radius: 5px;
-                    color: var(--textcolor);
-                    padding: .5em 2em;
-                    margin: 0 0.5em;
-                }
-                .btn-color {
-                    background-color: var(--bgbotton);
-                    border: 1px solid var(--bgbotton);
-                }
-            }
+        #carouselExampleAutoplaying {
+            margin-top: 5em;
         }
-        .grid-content {
-            display: grid;
-            grid-template-areas: 'orador orador'
-                                 'paisaje descrip'
-                                 'formulario formulario';
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 40% 22% auto;
-            
-            .item-1 {
+        .item-1 {
                 margin: 0;
+                display: flex;
+                justify-content: center;
                 .title {
                     text-align: center;
                     & h4 {
@@ -436,22 +235,28 @@ footer {
                     }
                 }
             }
-            .item-3 {
-                padding: .5em .7em;
-                line-height: 1.5em;
-                text-align: left;
-                & h1 {
-                    font-size: 1em;
-                }
-                & p {
-                    font-size: .5em;
-                    line-height: normal;
-                    margin: .5em 0;
-                }
-                .btn-conoce-mas {
-                    border-radius: 4px;
-                    font-size: .5em;
+        #lugar {
+            display: flex;
+            .item-2 {
+
+            }
+                .item-3 {
                     padding: .5em .7em;
+                    line-height: 1.5em;
+                    text-align: left;
+                    & h1 {
+                        font-size: 1em;
+                    }
+                    & p {
+                        font-size: .5em;
+                        line-height: normal;
+                        margin: .5em 0;
+                    }
+                    .btn-conoce-mas {
+                        border-radius: 4px;
+                        font-size: .5em;
+                        padding: .5em .7em;
+                    }
                 }
             }
             .item-4 {
@@ -510,7 +315,6 @@ footer {
                 }
             }
         }
-    }
     footer {
         height: 2em;
         width: 100%;
@@ -520,7 +324,8 @@ footer {
         }
     }
 }
-@media (min-width: 377px) and (max-width: 480px){
+
+/* @media (min-width: 377px) and (max-width: 480px){
     header {
         height: 3em;
         .logo {
@@ -734,9 +539,9 @@ footer {
             font-size: .5em;
         }
     }
-}
+} */
 /* iPads y Tablets: 481px — 768px */
-@media (min-width: 481px) and (max-width: 767px){
+/* @media (min-width: 481px) and (max-width: 767px){
     header {
         height: 3.5em;
         .logo {
@@ -936,9 +741,9 @@ footer {
             font-size: .5em;
         }
     }
-}
+} */
 /* Pantallas pequeñas, laptops: 769px — 1023px */
-@media (min-width: 768px) and (max-width: 1023px){
+/* @media (min-width: 768px) and (max-width: 1023px){
     header {
         height: 4em;
         .logo {
@@ -1130,9 +935,9 @@ footer {
             font-size: .9em;
         }
     }
-}
+} */
 /* Computadoras de escritorio, pantallas grandes: 1024px — 1200px */
-@media (min-width: 1024px) and (max-width: 1200px){
+/* @media (min-width: 1024px) and (max-width: 1200px){
     header {
         height: 5em;
         .logo {
@@ -1326,4 +1131,4 @@ footer {
             font-size: 1.1em;
         }
     }
-}
+} */
