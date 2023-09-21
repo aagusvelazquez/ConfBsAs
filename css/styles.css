@@ -214,24 +214,27 @@ main {
             display: flex;
             flex-flow: row wrap;
             margin: 0;
-                .item-3 {
-                    padding: 1em 2em;
-                    line-height: 1.5em;
-                    text-align: left;
-                    & h1 {
+            & .item-2{
+                width: 100%;
+            }
+            .item-3 {
+                padding: 1em 2em;
+                line-height: 1.5em;
+                text-align: left;
+                & h1 {
                         font-size: 1.5em;
-                    }
-                    & p {
+                }
+                & p {
                         font-size: 1em;
                         line-height: normal;
                         margin: .5em 0;
-                    }
-                    & .btn-conoce-mas {
+                }
+                & .btn-conoce-mas {
                         border-radius: 4px;
                         font-size: .8em;
                         padding: .5em 1em;
-                    }
                 }
+            }
         }
         .item-4 {
                 width: 100%;
@@ -795,26 +798,30 @@ main {
             display: flex;
             flex-flow: row nowrap;
             margin: 0;
-                .item-3 {
-                    padding: 4em 1.5em 2em;
-                    line-height: 1.5em;
-                    text-align: left;
-                    & h1 {
-                        font-size: 2.5em;
-                        margin: 0;
-                    }
-                    & p {
-                        font-size: 1.7em;
-                        line-height: normal;
-                        margin: 1.5em 0;
-                    }
-                    & .btn-conoce-mas {
-                        border-radius: 4px;
-                        font-size: 1.5em;
-                        padding: .5em 1em;
-                        margin: 5em 0;
-                    }
+            & .item-2 {
+                width: 100%;
+            }
+            .item-3 {
+                width: 100%;
+                padding: 4em 1.5em 2em;
+                line-height: 1.5em;
+                text-align: left;
+                & h1 {
+                    font-size: 2.5em;
+                    margin: 0;
                 }
+                & p {
+                    font-size: 1.7em;
+                    line-height: normal;
+                    margin: 1.5em 0;
+                }
+                & .btn-conoce-mas {
+                    border-radius: 4px;
+                    font-size: 1.5em;
+                    padding: .5em 1em;
+                    margin: 5em 0;
+                }
+            }
         }
         .item-4 {
                 width: 80%;
