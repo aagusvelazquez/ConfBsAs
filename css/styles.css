@@ -17,27 +17,6 @@ main {
     .img-carousel {
         filter: brightness(0.5);
     }
-    .item-1 {
-            display: flex;
-            flex-flow: row wrap;
-            align-content: center;
-            justify-content: space-evenly;
-            align-items: center;
-            margin-top: 1em;
-            .title {
-                text-align: center;
-                & h4 {
-                    font-size: 0.8em;
-                    font-weight: lighter;
-                }
-                & h2 {
-                    font-size: 2em;
-                    font-weight: lighter;
-                    margin: 10px;
-        
-                }
-            }
-        }
     #lugar {
         display: flex;
         flex-flow: row nowrap;
@@ -150,66 +129,9 @@ main {
 /* Dispositivos Móviles S: 320px — 374px */
 @media (min-width: 320px) and (max-width: 374px){
     main {
-        #carouselExampleAutoplaying {
-            margin-top: 5em;
-            height: 9em;
-            #tex-carousel {
-                margin-top: 5em;
-                & h3 {
-                    font-size: .9em;
-                    margin: 0;
-                    padding: .3em;
-                }
-                & p {
-                    font-size: .6em;
-                    margin: 0;
-                    padding: .3em;
-                    line-height: 1em;
-                }
-                & a {
-                    font-size: 1em;
-                    padding: .6em;
-                }
-            }
+        .carousel-caption, button {
+            display: none !important;
         }
-        .item-1 {
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                .title {
-                    display: flex;
-                    text-align: center;
-                    margin: 2.5em;
-                    & h4 {
-                        font-size: 1em;
-                        margin: 0;
-                        padding: 0 .4em 0;
-                    }
-                    & h2 {
-                        font-size: 1em;
-                        margin: 0;
-                    }
-                }
-                & .col {
-                    height: 30em;
-                    width: 20em;
-                    /* Arriba | Derecha | Abajo | Izquierda */
-                    margin: 0 0 1em .9em;
-                    & .card-body {
-                        height: 5em;
-                        & .mb-2 {
-                            font-size: 1em;
-                        }
-                        & .card-title {
-                            font-size: 1em;
-                        }
-                        & .card-text {
-                            font-size: .8em;
-                        }
-                    }
-                }
-            }
         #lugar {
             display: flex;
             flex-flow: row wrap;
@@ -304,66 +226,9 @@ main {
 /* Dispositivos Móviles M: 375px — 424px */
 @media (min-width: 375px) and (max-width: 424px){
     main {
-        #carouselExampleAutoplaying {
-            margin-top: 5em;
-            height: 9em;
-            #tex-carousel {
-                margin-top: 3em;
-                & h3 {
-                    font-size: .9em;
-                    margin: 0;
-                    padding: .3em;
-                }
-                & p {
-                    font-size: .6em;
-                    margin: 0;
-                    padding: .3em;
-                    line-height: 1em;
-                }
-                & a {
-                    font-size: 1em;
-                    padding: .6em;
-                }
-            }
+        .carousel-caption, button {
+            display: none !important;
         }
-        .item-1 {
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                .title {
-                    display: flex;
-                    text-align: center;
-                    margin: 2em;
-                    & h4 {
-                        font-size: 1em;
-                        margin: 0;
-                        padding: 0 .4em 0;
-                    }
-                    & h2 {
-                        font-size: 1em;
-                        margin: 0;
-                    }
-                }
-                & .col {
-                    height: 30em;
-                    width: 20em;
-                    /* Arriba | Derecha | Abajo | Izquierda */
-                    margin: 0 0 1em 2.5em;
-                    & .card-body {
-                        height: 5em;
-                        & .mb-2 {
-                            font-size: 1em;
-                        }
-                        & .card-title {
-                            font-size: 1em;
-                        }
-                        & .card-text {
-                            font-size: .8em;
-                        }
-                    }
-                }
-            }
         #lugar {
             display: flex;
             flex-flow: row wrap;
@@ -455,66 +320,9 @@ main {
 /* Dispositivos Móviles L: 425px — 424px */
 @media (min-width: 425px) and (max-width: 767px){
     main {
-        #carouselExampleAutoplaying {
-            margin-top: 5em;
-            height: 9em;
-            #tex-carousel {
-                margin-top: 3.5em;
-                & h3 {
-                    font-size: 1em;
-                    margin: 0;
-                    padding: .3em;
-                }
-                & p {
-                    font-size: .7em;
-                    margin: 0;
-                    padding: .3em;
-                    line-height: 1.3em;
-                }
-                & a {
-                    font-size: 1em;
-                    padding: .6em;
-                }
-            }
+        .carousel-caption, button {
+            display: none !important;
         }
-        .item-1 {
-                margin: 2em 0;
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                .title {
-                    display: flex;
-                    text-align: center;
-                    margin: 2em;
-                    & h4 {
-                        font-size: 1em;
-                        margin: 0;
-                        padding: 0 .4em 0;
-                    }
-                    & h2 {
-                        font-size: 1em;
-                        margin: 0;
-                    }
-                }
-                & .col {
-                    height: 30em;
-                    width: 20em;
-                    /* Arriba | Derecha | Abajo | Izquierda */
-                    margin: 0 0 1em 4em;
-                    & .card-body {
-                        height: 5em;
-                        & .mb-2 {
-                            font-size: 1em;
-                        }
-                        & .card-title {
-                            font-size: 1em;
-                        }
-                        & .card-text {
-                            font-size: .8em;
-                        }
-                    }
-                }
-            }
         #lugar {
             display: flex;
             flex-flow: row wrap;
@@ -602,69 +410,6 @@ main {
 /* Tablets: 768px — 1023px */
 @media (min-width: 768px) and (max-width: 1023px){
     main {
-        #carouselExampleAutoplaying {
-            margin-top: 5em;
-            height: 9em;
-            #tex-carousel {
-                margin: 0;
-                & h3 {
-                    font-size: 2.5em;
-                    margin: 0;
-                    padding: .3em;
-                }
-                & p {
-                    font-size: 1em;
-                    margin: 0;
-                    padding: .5em;
-                    line-height: 1.3em;
-                }
-                & a {
-                    font-size: 1em;
-                    padding: .6em;
-                }
-            }
-        }
-        .item-1 {
-                /* Arriba | Horizontal | Abajo */
-                margin: 12em 0 2em;
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                .title {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 2em;
-                    & h4 {
-                        font-size: 1.5em;
-                        margin: 0;
-                        padding: 0 .4em 0;
-                    }
-                    & h2 {
-                        font-size: 2em;
-                        margin: 0;
-                    }
-                }
-                & .col {
-                    height: 38em;
-                    width: 25em;
-                    /* Arriba | Derecha | Abajo | Izquierda */
-                    margin: 0 0 2em 10em;
-                    & .card-body {
-                        height: 5em;
-                        & .mb-2 {
-                            font-size: 1.5em;
-                        }
-                        & .card-title {
-                            font-size: 1.5em;
-                        }
-                        & .card-text {
-                            font-size: 1em;
-                        }
-                    }
-                }
-            }
         #lugar {
             display: flex;
             flex-flow: row nowrap;
@@ -748,52 +493,6 @@ main {
 /* Laptop: 1024px — 424px */
 @media (min-width: 1024px) and (max-width: 1439px){
     main {
-        #carouselExampleAutoplaying {
-            & #tex-carousel {
-                margin: 0;
-            }
-        }
-        .item-1 {
-                /* Arriba | Horizontal | Abajo */
-                margin: 1em 0 2em;
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                .title {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 2em;
-                    & h4 {
-                        font-size: 1.5em;
-                        margin: 0;
-                        padding: 0 .4em 0;
-                    }
-                    & h2 {
-                        font-size: 2em;
-                        margin: 0;
-                    }
-                }
-                & .col {
-                    height: 52em;
-                    width: 35em;
-                    /* Arriba | Derecha | Abajo | Izquierda */
-                    margin: 0 0 2em 12em;
-                    & .card-body {
-                        height: 5em;
-                        & .mb-2 {
-                            font-size: 2em;
-                        }
-                        & .card-title {
-                            font-size: 2em;
-                        }
-                        & .card-text {
-                            font-size: 1.5em;
-                        }
-                    }
-                }
-            }
         #lugar {
             display: flex;
             flex-flow: row nowrap;
