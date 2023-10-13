@@ -1,59 +1,178 @@
-:root {
-    --bgcolor:  #333b43;
-    --textcolor: white;
-    --bgbotton: #29A744;
-}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* Barra de Navegación */
 .navbar {
-    background-color: var(--bgcolor);
+    background-color: #343a40;
     width: 100%;
 }
+/* Area principal */
+.tickets {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+/* Informacion de Entradas */
+.entradas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+.entrada {
+    max-width: 210px;
+    max-height: 200px;
+    margin: .5em;
+    padding: .5em 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
 .entrada-estudiante {
-    width: 400px;
-    height: 200px;
-    border: 2px solid blue;
+    border: 3px solid #a5c5e7;
+    & h4 {
+        font-weight: bold;
+    }
+    & span{
+        font-weight: bold;
+        margin-top:.3em;
+        margin-bottom: 1em;
+    }
+    & .entrada-recordatorio {
+        font-size: small;
+        color:gray;
+    }
 }
 .entrada-trainee {
-    width: 400px;
-    height: 200px;
-    border: 2px solid green;
+    border: 3px solid #abcfd5;
+    & h4 {
+        font-weight: bold;
+    }
+    & span{
+        font-weight: bold;
+        margin-top:.3em;
+        margin-bottom: 1em;
+    }
+    & .entrada-recordatorio {
+        font-size: small;
+        color:gray;
+    }
 }
 .entrada-junior {
-    width: 400px;
-    height: 200px;
-    border: 2px solid yellow;
+    border: 3px solid #e7d7a6;
+    & h4 {
+        font-weight: bold;
+    }
+    & span{
+        font-weight: bold;
+        margin-top:.3em;
+        margin-bottom: 1em;
+    }
+    & .entrada-recordatorio {
+        font-size: small;
+        color:gray;
+    }
 }
-.entrada-estudiante h4 {
-    font-weight: bold;
+/* Formulario de compra */
+.titulo-form {
+    text-align: center;
+    & h4 {
+        font-size: small;
+    }
 }
-.entrada-estudiante span{
-    font-weight: bold;
-    margin-bottom: 2rem;
+.formulario {
+    list-style: none;
+    margin-top: .7em;
 }
-.entrada-estudiante .entrada-recordatorio {
-    font-size: small;
-    color:gray;
+.total-pagar {
+    background-color: #cce5ff !important;
+    color: #225c99 !important;
+    height: 3.5em;
+}
+.btn-compra{
+    display: block;
+    text-decoration: none;
+    background-color: #97c93e !important;
+    border: #97c93e 1px solid !important;
+    font-size: 1.1em;
+    color: white !important;
+    border-radius: 5px;
+    width: 100%;
+    height: 2.5em;
+    padding: .5em 2em;
 }
 
+/* Pie de Pagina */
 #miFooter {
-    background: linear-gradient( to right, #1c3c44,  #4e758b);
+    background: linear-gradient( to right, #203844,  #1f516e);
     padding: 1em;
     margin-top: 2em;
 }
 /* MEDIA QUERIES */
-/* Dispositivos Móviles S: 320px — 374px */
-@media (min-width: 320px) and (max-width: 374px){
-    #miFooter {
-        margin-top: .5em;
+@media screen and (max-width: 430px){
+    .entrada-estudiante {
+        border: 3px solid #a5c5e7;
+        & h4 {
+            font-weight: bold;
+        }
+        & p {
+            text-align: center;
+            font-size: small;
+        }
+        & span{
+            font-weight: bold;
+            margin-top:0;
+            margin-bottom: .5em;
+        }
+        & .entrada-recordatorio {
+            font-size: x-small;
+            color:gray;
+        }
     }
-}
-/* Dispositivos Móviles M: 375px — 424px */
-@media (min-width: 375px) and (max-width: 424px){
+    .entrada-trainee {
+        border: 3px solid #abcfd5;
+        & h4 {
+            font-weight: bold;
+        }
+        & p {
+            text-align: center;
+            font-size: small;
+        }
+        
+        & span{
+            font-weight: bold;
+            margin-top:0;
+            margin-bottom: .5em;
+        }
+        & .entrada-recordatorio {
+            font-size: small;
+            color:gray;
+        }
+    }
+    .entrada-junior {
+        border: 3px solid #e7d7a6;
+        & h4 {
+            font-weight: bold;
+        }
+        & p {
+            text-align: center;
+            font-size: small;
+        }
+        
+        & span{
+            font-weight: bold;
+            margin-top:0;
+            margin-bottom: .5em;
+        }
+        & .entrada-recordatorio {
+            font-size: small;
+            color:gray;
+        }
+    }
     #miFooter {
         margin-top: .5em;
     }

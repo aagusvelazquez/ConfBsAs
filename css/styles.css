@@ -1,5 +1,5 @@
 :root {
-    --bgcolor:  #333b43;
+    --bgcolor:  #343a40;
     --textcolor: white;
     --bgbotton: #29A744;
 }
@@ -103,8 +103,8 @@ main {
                 & .btn-color {
                     display: block;
                     text-decoration: none;
-                    background: linear-gradient(#95e152, #5cb90b);
-                    border: #95e152 1px solid;
+                    background-color: #97c93e;
+                    border: #97c93e 1px solid;
                     font-size: 1.1em;
                     color: var(--textcolor);
                     border-radius: 5px;
@@ -113,15 +113,11 @@ main {
                     padding: .5em 2em;
                     margin: 1em 0 0 0;
                 }
-                & .btn-color:hover {
-                    background: linear-gradient(#5cb90b, #95e152);
-                    border: #95e152 1px solid;
-                }
             }
     }
 }
 #miFooter {
-    background: linear-gradient( to right, #1c3c44,  #4e758b);
+    background: linear-gradient( to right, #203844,  #1f516e);
     padding: 1em;
     margin-top: 2em;
 }

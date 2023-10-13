@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Comprar Tickets | Conf Bs As</title>
 </head>
-
 <body>
   <!-- Barra de navegacion -->
   <header>
@@ -25,9 +23,11 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-lg-0">
+          <ul class="navbar-nav mb-2 mb-lg-0"> <li class="nav-item">
+            <a class="nav-link text-light" aria-current="page" href="../index.html">Inicio</a>
+          </li>
             <li class="nav-item">
-              <a class="nav-link text-light" aria-current="page" href="../index.html">La conferencia</a>
+              <a class="nav-link" aria-current="page" href="../index.html">La conferencia</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../index.html/#oradores">Los oradores</a>
@@ -43,27 +43,84 @@
       </div>
     </nav>
   </header>
+  <!-- Contenido principal -->
   <main>
-    <div class="container d-flex flex-nowrap justify-content-center align-items-center m-5 p-3">
-        <div class="row">
-            <div class="entrada-estudiante col d-flex flex-column justify-content-center align-items-center m-1">
-                <h4>Estudiante</h4>
-                <p>Tienen un descuento</p>
-                <span>80%</span>
-                <p class="entrada-recordatorio">* presentar documentación</p>
+    <section>
+      <div class="tickets">
+        <div class="form-compra">
+          <div class="entradas container">
+            <div class="entrada entrada-estudiante">
+              <h4>Estudiante</h4>
+              <p>Tiene un descuento</p>
+              <span>80%</span>
+              <p class="entrada-recordatorio">* presentar la documentación</p>
             </div>
-            <div class="entrada-trainee col d-flex flex-column justify-content-center align-items-center m-1">
-                <h4>Trainee</h4>
-                <p>Tienen un descuento</p>
-                <span>50%</span>
-                <p class="entrada-recordatorio">* presentar documentación</p></div>
-            <div class="entrada-junior col d-flex flex-column justify-content-center align-items-center m-1">
-                <h4>Junior</h4>
-                <p>Tienen un descuento</p>
-                <span>15%</span>
-                <p class="entrada-recordatorio">* presentar documentación</p></div>
+            <div class="entrada entrada-trainee">
+              <h4>Trainee</h4>
+              <p>Tiene un descuento</p>
+              <span>50%</span>
+              <p class="entrada-recordatorio">* presentar la documentación</p>
+            </div>
+            <div class="entrada entrada-junior">
+              <h4>Junior</h4>
+              <p>Tiene un descuento</p>
+              <span>15%</span>
+              <p class="entrada-recordatorio">* presentar la documentación</p>
+            </div>
+          </div>
+          <div class="titulo-form">
+            <h4>VENTA</h4>
+            <h2 class="fs-1">VALOR DEL TICKET $200</h2>
+          </div>
+          <div class="formulario">
+            <form action="">
+              <!-- Nombre y Apellido -->
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Nombre" aria-label="">
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Apellido" aria-label="">
+                </div>
+              </div>
+              <!-- Correo -->
+              <div class="mb-3 my-3">
+                <input type="email" class="form-control" id="" placeholder="Correo">
+              </div>
+              <!-- Cantidad y Categoría -->
+              <div class="row g-2">
+                <div class="col-12 col-md-6">
+                  <label for="" class="form-label">Cantidad</label>
+                  <input type="text" class="form-control" id="">
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="" class="form-label">Categoría</label>
+                  <select id="" class="form-select">
+                    <option selected>Elegir...</option>
+                    <option value="">Estudiante</option>
+                    <option value="">Trainee</option>
+                    <option value="">Junior</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Total a pagar -->
+              <div class="mb-3 my-3">
+                <input type="text" class="total-pagar form-control" id="" value="Total a Pagar: $">
+              </div>
+              <!-- Botones -->
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <button class="btn btn-compra" type="button">Borrar</button>
+                </div>
+                <div class="col-12 col-md-6">
+                  <button class="btn btn-compra" type="button">Resumen</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
   </main>
   <!-- Pie de pagina -->
   <footer id="miFooter">
@@ -93,11 +150,11 @@
       </ul>
     </div>
   </footer>
-  <!-- Bootstrap JavaScript Libraries -->
+  
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
