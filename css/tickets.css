@@ -1,0 +1,60 @@
+:root {
+    --bgcolor:  #333b43;
+    --textcolor: white;
+    --bgbotton: #29A744;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar {
+    background-color: var(--bgcolor);
+    width: 100%;
+}
+.entrada-estudiante {
+    width: 400px;
+    height: 200px;
+    border: 2px solid blue;
+}
+.entrada-trainee {
+    width: 400px;
+    height: 200px;
+    border: 2px solid green;
+}
+.entrada-junior {
+    width: 400px;
+    height: 200px;
+    border: 2px solid yellow;
+}
+.entrada-estudiante h4 {
+    font-weight: bold;
+}
+.entrada-estudiante span{
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+.entrada-estudiante .entrada-recordatorio {
+    font-size: small;
+    color:gray;
+}
+
+#miFooter {
+    background: linear-gradient( to right, #1c3c44,  #4e758b);
+    padding: 1em;
+    margin-top: 2em;
+}
+/* MEDIA QUERIES */
+/* Dispositivos Móviles S: 320px — 374px */
+@media (min-width: 320px) and (max-width: 374px){
+    #miFooter {
+        margin-top: .5em;
+    }
+}
+/* Dispositivos Móviles M: 375px — 424px */
+@media (min-width: 375px) and (max-width: 424px){
+    #miFooter {
+        margin-top: .5em;
+    }
+}
