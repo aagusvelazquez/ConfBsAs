@@ -48,7 +48,7 @@
     <section>
       <div class="tickets">
         <div class="form-compra">
-          <!-- Informacion de entrads -->
+          <!-- Informacion de entradas -->
           <div class="row justify-content-center">
             <div class="col-md-11">
               <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -95,43 +95,68 @@
               <!-- Nombre y Apellido -->
               <div class="row g-3">
                 <div class="col-12 col-md-6">
-                  <input type="text" class="form-control" placeholder="Nombre" aria-label="">
+                  <input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
+                  <span role="alert" id="nombreVacio" aria-hidden="true">
+                    Ingrese su nombre, por favor
+                  </span>
+                  <span role="alert" id="nombreError" aria-hidden="true">
+                    Ingrese un nombre válido, por favor
+                  </span>
                 </div>
                 <div class="col-12 col-md-6">
-                  <input type="text" class="form-control" placeholder="Apellido" aria-label="">
+                  <input type="text" class="form-control" placeholder="Apellido" id="apellido" required>
+                  <span role="alert" id="apellidoVacio" aria-hidden="true">
+                    Ingrese su apellido, por favor
+                  </span>
+                  <span role="alert" id="apellidoError" aria-hidden="true">
+                    Ingrese un apellido válido, por favor
+                  </span>
                 </div>
               </div>
               <!-- Correo -->
               <div class="mb-3 my-3">
-                <input type="email" class="form-control" id="" placeholder="Correo">
+                <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                <span role="alert" id="correoVacio" aria-hidden="true">
+                  Ingrese su correo electrónico, por favor
+                </span>
+                <span role="alert" id="correoError" aria-hidden="true">
+                  Ingrese un correo válido, por favor
+                </span>
               </div>
               <!-- Cantidad y Categoría -->
               <div class="row g-2">
                 <div class="col-12 col-md-6">
-                  <label for="" class="form-label">Cantidad</label>
-                  <input type="text" class="form-control" id="">
+                  <label for="cantidad" class="form-label">Cantidad</label>
+                  <input type="text" class="form-control" id="cantidad" placeholder="Cantidad de entradas" required>
+                  <span role="alert" id="cantVacio" aria-hidden="true">
+                    Ingrese la cantidad de entradas, por favor
+                  </span>
                 </div>
                 <div class="col-12 col-md-6">
-                  <label for="" class="form-label">Categoría</label>
-                  <select id="" class="form-select">
-                    <option selected>Elegir...</option>
-                    <option value="">Estudiante</option>
-                    <option value="">Trainee</option>
-                    <option value="">Junior</option>
+                  <label for="categoria" class="form-label">Categoría</label>
+                  <select id="categoria" class="form-select" required>
+                    <option selected="">--Seleccione--</option>
+                    <option value="0">Estudiante</option>
+                    <option value="1">Trainee</option>
+                    <option value="2">Junior</option>
+                    <option value="3">Sin categoría</option>
                   </select>
                 </div>
               </div>
               <!-- Total a pagar -->
-              <div class="mb-3 my-3">
-                <input type="text" class="total-pagar form-control" id="" value="Total a Pagar: $">
+              <div class="alert alert-primary mb-3 my-3" role="alert">
+                Total a pagar: <span id="totalPagar"></span>
               </div>
               <!-- Botones -->
               <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <button class="btn btn-compra" type="button">Borrar</button>
+                <div class="col-4">
+                  <button class="btn btn-compra cancelar" type="reset" id="btnClear">Cancelar</button>
                 </div>
-                <div class="col-12 col-md-6">
-                  <button class="btn btn-compra" type="button">Resumen</button>
+                <div class="col-4">
+                  <button class="btn btn-compra" type="button" id="btnResumen">Resumen</button>
+                </div>
+                <div class="col-4">
+                  <button class="btn btn-compra" type="reset" id="btnConfirmar">Comprar</button>
                 </div>
               </div>
             </form>
@@ -169,7 +194,7 @@
     </div>
   </footer>
   
-  
+  <script src="../js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
