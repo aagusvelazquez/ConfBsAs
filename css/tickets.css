@@ -89,29 +89,17 @@
     list-style: none;
     margin-top: .7em;
 }
-#nombreVacio,
 #nombreError,
-#apellidoVacio,
 #apellidoError,
-#correoVacio,
 #correoError,
 #cantVacio {
     display: none;
     font-size: 0.8em;
 }
-#nombreVacio.visible {
-    display: block;
-}
 #nombreError.visible {
     display: block;
 }
-#apellidoVacio.visible {
-    display: block;
-}
 #apellidoError.visible {
-    display: block;
-}
-#correoVacio.visible {
     display: block;
 }
 #correoError.visible {
