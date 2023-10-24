@@ -101,4 +101,3 @@ function resumen() {
 
 const btnClick = document.getElementById('btnResumen');
 btnClick.addEventListener('click', resumen);
-

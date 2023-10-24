@@ -31,7 +31,9 @@
     padding: 10px 15px;
 }
 #nombreError,
-#apellidoError {
+#apellidoError,
+#correoError,
+#temaError {
     display: none;
     font-size: 0.8em;
 }
@@ -39,6 +41,12 @@
     display: block;
 }
 #apellidoError.visible {
+    display: block;
+}
+#correoError.visible {
+    display: block;
+}
+#temaError.visible {
     display: block;
 }
 input.invalido {
