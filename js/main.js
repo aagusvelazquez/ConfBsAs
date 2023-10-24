@@ -16,6 +16,11 @@ function resumen() {
         nombre.classList.add('is-invalid');
         nombreError.setAttribute('aria-hidden', false);
         nombreError.setAttribute('aria-invalid', true);
+        Swal.fire(
+            'ERROR!',
+            'Ingrese un nombre válido por favor!',
+            'error'
+        )
     }else {
         nombreError.classList.add('invisible');
         nombre.classList.remove('is-invalid');
@@ -29,6 +34,11 @@ function resumen() {
         apellido.classList.add('is-invalid');
         apellidoError.setAttribute('aria-hidden', false);
         apellidoError.setAttribute('aria-invalid', true);
+        Swal.fire(
+            'ERROR!',
+            'Ingrese un apellido válido por favor!',
+            'error'
+        )
     }else {
         apellidoError.classList.add('invisible');
         apellido.classList.remove('is-invalid');
@@ -42,6 +52,11 @@ function resumen() {
         correo.classList.add('is-invalid');
         correoError.setAttribute('aria-hidden', false);
         correoError.setAttribute('aria-invalid', true);
+        Swal.fire(
+            'ERROR!',
+            'Ingrese un correo electrónico válido por favor!',
+            'error'
+        )
     }else {
         correoError.classList.add('invisible');
         correo.classList.remove('is-invalid');
