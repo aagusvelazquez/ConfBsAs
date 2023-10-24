@@ -70,19 +70,20 @@ function resumen() {
 
         if (cat.value == 0) {
             resumenTotal = (200*0.2)*cant.value;
-            document.getElementById('totalPagar').innerHTML = `$${resumenTotal}`;
+            document.getElementById('totalPagar').value = `$` + resumenTotal;
         } else if (cat.value == 1) {
             resumenTotal = (200*0.5)*cant.value;
-            document.getElementById('totalPagar').innerHTML = `$${resumenTotal}`;
+            document.getElementById('totalPagar').value = `$` + resumenTotal;
         } else if (cat.value == 2) {
             resumenTotal = (200*0.85)*cant.value;
-            document.getElementById('totalPagar').innerHTML = `$${resumenTotal}`;
+            document.getElementById('totalPagar').value = `$` + resumenTotal;
         }else if (cat.value == 3) {
             resumenTotal = 200*cant.value;
-            document.getElementById('totalPagar').innerHTML = `$${resumenTotal}`;
+            document.getElementById('totalPagar').value = `$` + resumenTotal;
         }
     }
 }
 
 const btnClick = document.getElementById('btnResumen');
 btnClick.addEventListener('click', resumen);
+

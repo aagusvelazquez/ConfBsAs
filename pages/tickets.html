@@ -136,8 +136,9 @@
               </div>
               <!-- Total a pagar -->
               <div class="alert alert-primary mb-3 my-3" role="alert">
-                Total a pagar: <span id="totalPagar"></span>
+                Total a pagar: <input type="text" class="total-pagar" id="totalPagar" disabled>
               </div>
+              
               <!-- Botones -->
               <div class="row g-3">
                 <div class="col-4">
@@ -147,7 +148,7 @@
                   <button class="btn btn-compra" type="button" id="btnResumen">Resumen</button>
                 </div>
                 <div class="col-4">
-                  <button class="btn btn-compra" type="reset" id="btnConfirmar">Comprar</button>
+                  <button class="btn btn-compra" type="button" id="btnConfirmar">Comprar</button>
                 </div>
               </div>
             </form>
@@ -192,6 +193,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

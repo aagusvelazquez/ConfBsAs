@@ -13,566 +13,75 @@
     background-color: var(--bgcolor);
     width: 100%;
 }
-main {
-    .img-carousel {
-        filter: brightness(0.5);
-    }
-    #lugar {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: stretch;
-        margin-top: 2em;
-        .item-2 {
-            border: 1px solid var(--textcolor);
-            & img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .item-3 {
-            background-color: var(--bgcolor);
-            color: var(--textcolor);
-            border: 1px solid var(--textcolor);
-            padding: 1em;
-            line-height: 1.5em;
-            text-align: left;
-                & p {
-                    margin: 1.5em 0;
-                }
-            .btn-conoce-mas {
-                text-decoration: none;
-                border: 1px solid var(--textcolor);
-                border-radius: 5px;
-                color: var(--textcolor);
-                padding: 10px 15px;
-            }
-        }
-    }
-    .item-4 {
-            width: 50%;
-            margin: 0 auto;
-            margin-top: 1em;
-            .title-form {
-                text-align: center;
-                margin: 0;
-                line-height: 10px;
-            & h4 {
-                font-size: 0.8em;
-                font-weight: lighter;
-            }
-            & h2 {
-                font-size: 2em;
-                font-weight: lighter;
-                margin: 10px;
-            }
-            & p {
-                font-size: 0.9em;
-                margin-top: 25px;
-            }
-            }
-            .formulario {
-                list-style: none;
-                margin-top: .7em;
-                & #nombre {
-                    width: 49%;
-                    height: 2em;
-                    margin: 0;
-                    border-radius: 5px;
-                    border: 1px solid lightgray;
-                }
-                & #apellido {
-                    width: 50%;
-                    height: 2em;
-                    border-radius: 5px;
-                    border: 1px solid lightgray;
-                }
-                & #tema-charla {
-                    width: 100%;
-                    height: 10em;
-                    margin: 1em 0;
-                    border-radius: 5px;
-                    border: 1px solid lightgray;
-                }
-                & #recordatorio {
-                    font-size: 1em;
-                    padding: .3em;
-                    font-size: 0.7em;
-                    color: #acacac;
-                }
-                & .btn-color {
-                    display: block;
-                    text-decoration: none;
-                    background-color: #97c93e;
-                    border: #97c93e 1px solid;
-                    font-size: 1.1em;
-                    color: var(--textcolor);
-                    border-radius: 5px;
-                    width: 100%;
-                    height: 2.5em;
-                    padding: .5em 2em;
-                    margin: 1em 0 0 0;
-                }
-            }
-    }
+.img-carousel{
+    filter: brightness(0.5);
+}
+#lugar{
+    background-color: var(--bgcolor);
+}
+#lugar .texto-honolulu {
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+}
+#lugar .btn-conoce-mas{
+    text-decoration: none;
+    border: 1px solid var(--textcolor);
+    border-radius: 5px;
+    color: var(--textcolor);
+    padding: 10px 15px;
+}
+#nombreError,
+#apellidoError {
+    display: none;
+    font-size: 0.8em;
+}
+#nombreError.visible {
+    display: block;
+}
+#apellidoError.visible {
+    display: block;
+}
+input.invalido {
+    border-color: red;
+}
+#tema-charla {
+    width: 100%;
+    height: 10em;
+    margin-top: 1em;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+#recordatorio {
+    font-size: 1em;
+    font-size: 0.7em;
+    color: #acacac;
+}
+#orador{
+    width: 60%;
+    margin: 2em auto;
+}
+.btn-color{
+    text-decoration: none;
+    background-color: #97c93e;
+    border: #97c93e 1px solid;
+    font-size: 1.1em;
+    color: var(--textcolor);
+    border-radius: 5px;
+    height: 2.5em;
+    padding: .5em 2em;
 }
 #miFooter {
     background: linear-gradient( to right, #203844,  #1f516e);
     padding: 1em;
-    margin-top: 2em;
 }
 /* MEDIA QUERIES */
-/* Dispositivos Móviles S: 320px — 374px */
-@media (min-width: 320px) and (max-width: 374px){
+@media (min-width: 320px) and (max-width: 767px){
     main {
-        .carousel-caption, button {
+        .carousel-caption, .carousel-control-next-icon, .carousel-control-prev-icon {
             display: none !important;
         }
-        #lugar {
-            display: flex;
-            flex-flow: row wrap;
-            margin: 0;
-            & .item-2{
-                width: 100%;
-            }
-            .item-3 {
-                padding: 1em 2em;
-                line-height: 1.5em;
-                text-align: left;
-                & h1 {
-                        font-size: 1.5em;
-                }
-                & p {
-                        font-size: 1em;
-                        line-height: normal;
-                        margin: .5em 0;
-                }
-                & .btn-conoce-mas {
-                        border-radius: 4px;
-                        font-size: .8em;
-                        padding: .5em 1em;
-                }
-            }
-        }
-        .item-4 {
-                width: 100%;
-                margin: .4em auto;
-                padding: 1em;
-                .title-form {
-                    text-align: center;
-                    margin: 0;
-                    line-height: 6px;
-                    display: flex;
-                    flex-flow: column nowrap;
-                & h4 {
-                    font-size: .9em;
-                    margin: 0;
-                }
-                & h2 {
-                    font-size: .9em;
-                    margin: 0;
-                }
-                & p {
-                    font-size: .7em;
-                    margin-top: .4em;
-                    line-height: 1em;
-                }
-                }
-                .formulario {
-                    margin-top: .7em;
-                    #nombre {
-                        width: 100%;
-                        height: 1.5em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #apellido {
-                        width: 100%;
-                        height: 1.5em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #tema-charla {
-                        width: 100%;
-                        height: 7em;
-                        margin: 0;
-                        padding: 0;
-                        border-radius: 3px;
-                    }
-                    #recordatorio {
-                        font-size: .7em;
-                        margin: 0;
-                        padding: 0;
-                    }
-                    .btn-color {
-                        display: block;
-                        width: 100%;
-                        border-radius: 5px;
-                        font-size: 1em;
-                        padding: .5em 2em;
-                        margin: .4em 0 0;
-                    }
-                }
-        }
-    }
-    #miFooter {
-        margin-top: .5em;
-    }
-}
-/* Dispositivos Móviles M: 375px — 424px */
-@media (min-width: 375px) and (max-width: 424px){
-    main {
-        .carousel-caption, button {
-            display: none !important;
-        }
-        #lugar {
-            display: flex;
-            flex-flow: row wrap;
-            margin: 0;
-                .item-3 {
-                    padding: 1em 2em;
-                    line-height: 1.5em;
-                    text-align: left;
-                    & h1 {
-                        font-size: 1.5em;
-                    }
-                    & p {
-                        font-size: 1em;
-                        line-height: normal;
-                        margin: .5em 0;
-                    }
-                    & .btn-conoce-mas {
-                        border-radius: 4px;
-                        font-size: .8em;
-                        padding: .5em 1em;
-                    }
-                }
-        }
-        .item-4 {
-                width: 100%;
-                margin: .4em auto;
-                padding: 1em;
-                .title-form {
-                    text-align: center;
-                    margin: 0;
-                    line-height: 6px;
-                    display: flex;
-                    flex-flow: column nowrap;
-                & h4 {
-                    font-size: 1em;
-                    margin: 0;
-                }
-                & h2 {
-                    font-size: 1em;
-                    margin: 0;
-                }
-                & p {
-                    font-size: .8em;
-                    margin-top: 0;
-                    line-height: 1em;
-                }
-                }
-                .formulario {
-                    margin-top: .7em;
-                    #nombre {
-                        width: 100%;
-                        height: 1.5em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #apellido {
-                        width: 100%;
-                        height: 1.5em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #tema-charla {
-                        width: 100%;
-                        height: 7em;
-                        margin: 0;
-                        padding: 0;
-                        border-radius: 3px;
-                    }
-                    #recordatorio {
-                        font-size: .7em;
-                        margin: 0;
-                        padding: 0;
-                    }
-                    .btn-color {
-                        display: block;
-                        width: 100%;
-                        border-radius: 5px;
-                        font-size: 1em;
-                        padding: .5em 2em;
-                        margin: .4em 0 0;
-                    }
-                }
-        }
-    }
-    #miFooter {
-        margin-top: .5em;
-    }
-}
-/* Dispositivos Móviles L: 425px — 424px */
-@media (min-width: 425px) and (max-width: 767px){
-    main {
-        .carousel-caption, button {
-            display: none !important;
-        }
-        #lugar {
-            display: flex;
-            flex-flow: row wrap;
-            margin: 0;
-                .item-3 {
-                    padding: 1em 2em;
-                    line-height: 1.5em;
-                    text-align: left;
-                    & h1 {
-                        font-size: 1.5em;
-                    }
-                    & p {
-                        font-size: 1em;
-                        line-height: normal;
-                        margin: .5em 0;
-                    }
-                    & .btn-conoce-mas {
-                        border-radius: 4px;
-                        font-size: .8em;
-                        padding: .5em 1em;
-                    }
-                }
-        }
-        .item-4 {
-                width: 100%;
-                margin: .4em auto;
-                padding: 1em;
-                .title-form {
-                    text-align: center;
-                    margin: 0;
-                    display: flex;
-                    flex-flow: column nowrap;
-                & h4 {
-                    font-size: 1em;
-                    margin: 0;
-                }
-                & h2 {
-                    font-size: 1em;
-                    margin: 0;
-                }
-                & p {
-                    font-size: .8em;
-                    margin-top: 0;
-                    line-height: 1em;
-                }
-                }
-                .formulario {
-                    margin-top: .7em;
-                    #nombre {
-                        width: 100%;
-                        height: 1.5em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #apellido {
-                        width: 100%;
-                        height: 1.5em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #tema-charla {
-                        width: 100%;
-                        height: 7em;
-                        margin: 0;
-                        padding: 0;
-                        border-radius: 3px;
-                    }
-                    #recordatorio {
-                        font-size: .7em;
-                        margin: 0;
-                        padding: 0;
-                    }
-                    .btn-color {
-                        display: block;
-                        width: 100%;
-                        border-radius: 5px;
-                        font-size: 1em;
-                        padding: .5em 2em;
-                        margin: .4em 0 0;
-                    }
-                }
-        }
-    }
-}
-/* Tablets: 768px — 1023px */
-@media (min-width: 768px) and (max-width: 1023px){
-    main {
-        #lugar {
-            display: flex;
-            flex-flow: row nowrap;
-            margin: 0;
-                .item-3 {
-                    padding: 1em 2em;
-                    line-height: 1.5em;
-                    text-align: left;
-                    & h1 {
-                        font-size: 2em;
-                    }
-                    & p {
-                        font-size: 1.2em;
-                        line-height: normal;
-                        margin: 1em 0;
-                    }
-                    & .btn-conoce-mas {
-                        border-radius: 4px;
-                        font-size: .8em;
-                        padding: .5em 1em;
-                    }
-                }
-        }
-        .item-4 {
-                width: 80%;
-                margin: 1em auto;
-                padding: 1em;
-                .title-form {
-                    text-align: center;
-                    margin: 0;
-                    display: flex;
-                    flex-flow: column nowrap;
-                & h4 {
-                    font-size: 1em;
-                    margin: 0;
-                }
-                & h2 {
-                    font-size: 1.5em;
-                    margin: 0;
-                }
-                & p {
-                    font-size: 1em;
-                    margin-top: .5em;
-                }
-                }
-                .formulario {
-                    #nombre {
-                        width: 100%;
-                        height: 2em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #apellido {
-                        width: 100%;
-                        height: 2em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #tema-charla {
-                        width: 100%;
-                        height: 7em;
-                        margin: 0;
-                        padding: 0;
-                        border-radius: 3px;
-                    }
-                    #recordatorio {
-                        font-size: .8em;
-                    }
-                    .btn-color {
-                        display: block;
-                        width: 100%;
-                        border-radius: 5px;
-                        font-size: 1.2em;
-                        padding: .5em 2em;
-                        margin: .4em 0 0;
-                    }
-                }
-        }
-    }
-}
-/* Laptop: 1024px — 424px */
-@media (min-width: 1024px) and (max-width: 1439px){
-    main {
-        #lugar {
-            display: flex;
-            flex-flow: row nowrap;
-            margin: 0;
-            & .item-2 {
-                width: 100%;
-            }
-            .item-3 {
-                width: 100%;
-                padding: 4em 1.5em 2em;
-                line-height: 1.5em;
-                text-align: left;
-                & h1 {
-                    font-size: 2.5em;
-                    margin: 0;
-                }
-                & p {
-                    font-size: 1.7em;
-                    line-height: normal;
-                    margin: 1.5em 0;
-                }
-                & .btn-conoce-mas {
-                    border-radius: 4px;
-                    font-size: 1.5em;
-                    padding: .5em 1em;
-                    margin: 5em 0;
-                }
-            }
-        }
-        .item-4 {
-                width: 80%;
-                margin: 1em auto;
-                padding: 1em;
-                .title-form {
-                    text-align: center;
-                    margin: 0;
-                    display: flex;
-                    flex-flow: column nowrap;
-                & h4 {
-                    font-size: 1.5em;
-                    margin: 0;
-                }
-                & h2 {
-                    font-size: 2.5em;
-                    margin: 0;
-                }
-                & p {
-                    font-size: 1.5em;
-                    line-height: 1em;
-                    margin-top: .5em;
-                }
-                }
-                .formulario {
-                    #nombre {
-                        width: 100%;
-                        height: 3em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #apellido {
-                        width: 100%;
-                        height: 3em;
-                        margin: 0 0 .4em;
-                        border-radius: 3px;
-                    }
-                    #tema-charla {
-                        width: 100%;
-                        height: 10em;
-                        margin: 0;
-                        padding: 0;
-                        border-radius: 3px;
-                    }
-                    #recordatorio {
-                        font-size: 1.3em;
-                    }
-                    .btn-color {
-                        display: block;
-                        width: 100%;
-                        border-radius: 5px;
-                        font-size: 1.5em;
-                        padding: .5em 2em;
-                        margin: .4em 0 0;
-                    }
-                }
+        #orador{
+            width: 95%;
         }
     }
 }

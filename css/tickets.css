@@ -118,8 +118,10 @@ input.invalido {
 .total-pagar {
     background-color: #cce5ff !important;
     color: #225c99 !important;
-    height: 3.5em;
+    height: 2em;
+    border: none;
 }
+
 .btn-compra{
     display: block;
     text-decoration: none;
