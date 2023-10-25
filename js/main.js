@@ -1,3 +1,4 @@
+// Validacion de datos y Total a pagar de entradas
 function resumen() {
     var nombre = document.getElementById('nombre');
     var nombreError = document.getElementById('nombreError');
@@ -16,11 +17,6 @@ function resumen() {
         nombre.classList.add('is-invalid');
         nombreError.setAttribute('aria-hidden', false);
         nombreError.setAttribute('aria-invalid', true);
-        Swal.fire(
-            'ERROR!',
-            'Ingrese un nombre válido por favor!',
-            'error'
-        )
     }else {
         nombreError.classList.add('invisible');
         nombre.classList.remove('is-invalid');
@@ -34,11 +30,6 @@ function resumen() {
         apellido.classList.add('is-invalid');
         apellidoError.setAttribute('aria-hidden', false);
         apellidoError.setAttribute('aria-invalid', true);
-        Swal.fire(
-            'ERROR!',
-            'Ingrese un apellido válido por favor!',
-            'error'
-        )
     }else {
         apellidoError.classList.add('invisible');
         apellido.classList.remove('is-invalid');
@@ -52,11 +43,6 @@ function resumen() {
         correo.classList.add('is-invalid');
         correoError.setAttribute('aria-hidden', false);
         correoError.setAttribute('aria-invalid', true);
-        Swal.fire(
-            'ERROR!',
-            'Ingrese un correo electrónico válido por favor!',
-            'error'
-        )
     }else {
         correoError.classList.add('invisible');
         correo.classList.remove('is-invalid');
@@ -67,7 +53,9 @@ function resumen() {
     var cant = document.getElementById('cantidad');
     var cantVacio = document.getElementById('cantVacio');
     var cat = document.getElementById('categoria');
+    var fechaConf = document.getElementById('fechaConf');
     var resumenTotal;
+    var fechaAsiste;
 
     // Campo Cantidad y seleccion de Categoria
     if (!cant.value) {
@@ -75,8 +63,8 @@ function resumen() {
         cant.classList.add('is-invalid');
         cantVacio.setAttribute('aria-hidden', false);
         cantVacio.setAttribute('aria-invalid', true);
-        resumenTotal = "Seleccione la cantidad de entradas";
-        document.getElementById('totalPagar').innerHTML = `${resumenTotal}`;
+        resumenTotal = "Falta cantidad de entradas";
+        document.getElementById('totalPagar').value = resumenTotal;
     }else{
         cantVacio.classList.add('invisible');
         cant.classList.remove("is-invalid");
@@ -96,6 +84,15 @@ function resumen() {
             resumenTotal = 200*cant.value;
             document.getElementById('totalPagar').value = `$` + resumenTotal;
         }
+    }
+
+    // Campo Fecha a asistir
+    if (fechaConf.value == 0) {
+        fechaAsiste = 'Viernes 13 de Octubre';
+    }else if (fechaConf.value == 1) {
+        fechaAsiste = 'Sábado 14 de Octubre';
+    } else if (fechaConf.value == 2){
+        fechaAsiste = 'Domingo 15 de Octubre';
     }
 }
 

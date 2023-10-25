@@ -121,12 +121,10 @@ input.invalido {
     height: 2em;
     border: none;
 }
-
 .btn-compra{
     display: block;
     text-decoration: none;
-    background-color: #97c93e !important;
-    border: #97c93e 1px solid !important;
+    background-color: #3db03d !important;
     font-size: 1.1em;
     color: white !important;
     border-radius: 5px;
@@ -134,10 +132,34 @@ input.invalido {
     height: 2.5em;
     padding: .5em 2em;
 }
-.cancelar {
-    background-color: red !important;
+.input-ticket {
+    background-color: white !important;
+    border: none !important;
+    text-align: end !important;
+    width: 60% !important;
 }
-
+.input-ticket-2 {
+    background-color: white !important;
+    border: none !important;
+    text-align: end !important;
+    width: 50% !important;
+}
+.cancelar {
+    background-color: rgb(234, 2, 2) !important;
+}
+.resumen {
+    background-color: gray !important;
+}
+.btn-descarga-model {
+    display: block;
+    text-decoration: none;
+    background-color: #3db03d !important;
+    font-size: 1.1em;
+    color: white !important;
+    border-radius: 5px;
+    height: 2.5em;
+    padding: .5em 2em;
+}
 /* Pie de Pagina */
 #miFooter {
     background: linear-gradient( to right, #203844,  #1f516e);

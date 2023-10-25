@@ -114,16 +114,16 @@
                   ¡Complete este campo, por favor!
                 </span>
               </div>
-              <!-- Cantidad y Categoría -->
+              <!-- Cantidad, Categoría y Fecha-->
               <div class="row g-2">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                   <label for="cantidad" class="form-label">Cantidad</label>
                   <input type="text" class="form-control" id="cantidad" placeholder="Cantidad de entradas" required>
                   <span role="alert" id="cantVacio" aria-hidden="true">
                     ¡Complete este campo, por favor!
                   </span>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                   <label for="categoria" class="form-label">Categoría</label>
                   <select id="categoria" class="form-select" required>
                     <option selected="">--Seleccione--</option>
@@ -133,22 +133,57 @@
                     <option value="3">Sin categoría</option>
                   </select>
                 </div>
+                <div class="col-12 col-md-4">
+                  <label for="fechaConf" class="form-label">Fecha a asistir:</label>
+                  <select id="fechaConf" class="form-select" required>
+                    <option selected="">--Seleccione--</option>
+                    <option value="0">Viernes 13 de Octubre</option>
+                    <option value="1">Sábado 14 de Octubre</option>
+                    <option value="2">Domingo 15 de Octubre</option>
+                  </select>
+                </div>
               </div>
               <!-- Total a pagar -->
               <div class="alert alert-primary mb-3 my-3" role="alert">
                 Total a pagar: <input type="text" class="total-pagar" id="totalPagar" disabled>
               </div>
-              
               <!-- Botones -->
-              <div class="row g-3">
-                <div class="col-4">
-                  <button class="btn btn-compra cancelar" type="reset" id="btnClear">Cancelar</button>
+              <div class="row g-3 justify-content-center align-content-center">
+                <div class="col-5">
+                  <button class="btn btn-compra cancelar" type="reset" id="btnClear">Borrar</button>
                 </div>
-                <div class="col-4">
-                  <button class="btn btn-compra" type="button" id="btnResumen">Resumen</button>
+                <div class="col-5">
+                  <button class="btn btn-compra resumen" type="button" id="btnResumen">Confirmar</button>
                 </div>
-                <div class="col-4">
-                  <button class="btn btn-compra" type="button" id="btnConfirmar">Comprar</button>
+                
+                <div class="col-10">
+                  <button class="btn btn-compra" type="button" id="btnComprar" data-toggle="modal" data-target="#ventana" onclick="crearTicket()">COMPRAR</button>
+                </div>
+                <!-- Ticket -->
+                <div class="container ">
+                  <div class="modal" tabindex="-1" role="dialog" id="ventana">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title fw-bold">Ticket de Compra</h5>
+                        </div>
+                        <div class="modal-body">
+                          <p>Fecha de Compra: <input type="text" class="input-ticket" id="fechaCompra" disabled ></p>
+                          <p>Titular de la compra: <input type="text" class="input-ticket" id="titularCompra" disabled ></p>
+                          <p>Correo electrónico: <input type="text" class="input-ticket" id="correoCompra" disabled ></p>
+                          <p>Tipo y cantidad de Entrada(s): <input type="text" class="input-ticket-2" id="tipCantCompra" disabled ></p>
+                          <p>Fecha seleccionada Conf BsAs: <input type="text" class="input-ticket-2" id="fechaAsiste" disabled ></p>
+                          <p>Precio total: <input type="text" class="input-ticket" id="totalDeTicket" disabled ></p>
+                          <p class="text-center fw-bolder">¡GRACIAS POR TU COMPRA!</p>
+                          <p class="text-center fw-bold">¡Te esperamos!</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-descarga-model">Descargar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </form>
@@ -185,7 +220,57 @@
       </ul>
     </div>
   </footer>
-  
+
+  <script>
+    function crearTicket() {
+    const fecha = new Date();
+    var hoy = fecha.getDate();
+    var mesActual = fecha.getMonth() + 1; 
+    var anioActual = fecha.getFullYear();
+    var nombre = document.getElementById('nombre').value;
+    var apellido = document.getElementById('apellido').value;
+    var correo = document.getElementById('email').value;
+    var cant = document.getElementById('cantidad').value;
+    var cat = document.getElementById('categoria').value;
+    var fechaConf = document.getElementById('fechaConf').value;
+    var resumenTotal;
+    var fechaAsisteConf;
+
+    if (cat == 0) {
+      cat = "Estudiante";
+      resumenTotal = (200*0.2)*cant;
+    } else if (cat == 1) {
+      cat = "Trainee";
+      resumenTotal = (200*0.5)*cant;
+    } else if (cat == 2) {
+      cat = "Junior";
+      resumenTotal = (200*0.85)*cant;
+    } else if (cat == 3) {
+      cat = "Sin Categoría"
+      resumenTotal = 200*cant;
+    }
+
+    if (fechaConf == 0) {
+      fechaAsisteConf = 'Viernes 13 de Octubre';
+    }else if (fechaConf == 1) {
+      fechaAsisteConf = 'Sábado 14 de Octubre';
+    } else if (fechaConf == 2){
+      fechaAsisteConf = 'Domingo 15 de Octubre';
+    }
+
+    document.getElementById("fechaCompra").value = hoy + "/" + mesActual + "/" + anioActual;
+
+    document.getElementById("titularCompra").value = nombre + " " + apellido;
+
+    document.getElementById("correoCompra").value = correo;
+
+    document.getElementById("tipCantCompra").value = cat + " x" + cant;
+
+    document.getElementById("fechaAsiste").value = fechaAsisteConf;
+
+    document.getElementById("totalDeTicket").value = "$" + resumenTotal;
+}
+  </script>
   <script src="../js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -194,6 +279,9 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
