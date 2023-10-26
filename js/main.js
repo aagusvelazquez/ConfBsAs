@@ -34,15 +34,15 @@ document.getElementById('validar').addEventListener('click', function() {
       document.getElementById('totalPagar').value = `$` + resumenTotal;
     }
 
-      if (asistir.value == 0) {
-          fechaAsiste = 'Viernes 13 de Octubre';
-      }else if (asistir.value == 1) {
-          fechaAsiste = 'Sábado 14 de Octubre';
-      } else if (asistir.value == 2){
-          fechaAsiste = 'Domingo 15 de Octubre';
-      }
-      document.getElementById('generar-ticket').disabled = false;
-  } else {
+    if (asistir.value == 0) {
+      fechaAsiste = 'Viernes 13 de Octubre';
+    } else if (asistir.value == 1) {
+      fechaAsiste = 'Sábado 14 de Octubre';
+    } else if (asistir.value == 2){
+      fechaAsiste = 'Domingo 15 de Octubre';
+    }
+    document.getElementById('generar-ticket').disabled = false;
+    } else {
       Swal.fire(
           'ERROR!',
           'Por favor, introduce datos válidos en todos los campos.',
