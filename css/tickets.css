@@ -141,12 +141,6 @@
 .input-correo {
     width: 70%;
 }
-.cancelar {
-    background-color: rgb(234, 2, 2) !important;
-}
-.resumen {
-    background-color: gray !important;
-}
 .btn-descarga-model {
     display: block;
     text-decoration: none;
