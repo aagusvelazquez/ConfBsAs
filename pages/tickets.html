@@ -6,7 +6,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon">
     <!-- Estilos -->
-    <link rel="stylesheet" href="../css/tickets.css">
+    <link rel="stylesheet" href="/css/tickets.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Comprar Tickets | Conf Bs As</title>
 </head>
@@ -52,6 +52,7 @@
           <div class="row justify-content-center">
             <div class="col-md-11">
               <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Estudiante -->
                 <div class="col">
                   <div class="card h-100 entrada-estudiante text-center">
                     <div class="card-body">
@@ -62,6 +63,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Trainee -->
                 <div class="col">
                   <div class="card h-100 entrada-trainee text-center">
                     <div class="card-body">
@@ -72,6 +74,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Junior -->
                 <div class="col">
                   <div class="card h-100 entrada-junior text-center">
                     <div class="card-body">
@@ -91,41 +94,29 @@
             <h2 class="fs-1">VALOR DEL TICKET $200</h2>
           </div>
           <div class="formulario">
-            <form action="">
+            <form action="" id="form">
               <!-- Nombre y Apellido -->
               <div class="row g-3">
                 <div class="col-12 col-md-6">
                   <input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
-                  <span role="alert" id="nombreError" minlenght="2" aria-hidden="true">
-                    ¡Complete este campo, por favor!
-                  </span>
                 </div>
                 <div class="col-12 col-md-6">
                   <input type="text" class="form-control" placeholder="Apellido" id="apellido" required>
-                  <span role="alert" id="apellidoError" minlenght="2" aria-hidden="true">
-                    ¡Complete este campo, por favor!
-                  </span>
                 </div>
               </div>
               <!-- Correo -->
               <div class="mb-3 my-3">
                 <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
-                <span role="alert" id="correoError" aria-hidden="true">
-                  ¡Complete este campo, por favor!
-                </span>
               </div>
               <!-- Cantidad, Categoría y Fecha-->
               <div class="row g-2">
                 <div class="col-12 col-md-4">
                   <label for="cantidad" class="form-label">Cantidad</label>
-                  <input type="text" class="form-control" id="cantidad" placeholder="Cantidad de entradas" required>
-                  <span role="alert" id="cantVacio" aria-hidden="true">
-                    ¡Complete este campo, por favor!
-                  </span>
+                  <input type="text" class="form-control" id="cantidad" placeholder="Cantidad de entradas">
                 </div>
                 <div class="col-12 col-md-4">
                   <label for="categoria" class="form-label">Categoría</label>
-                  <select id="categoria" class="form-select" required>
+                  <select id="categoria" class="form-select" >
                     <option selected="">--Seleccione--</option>
                     <option value="0">Estudiante</option>
                     <option value="1">Trainee</option>
@@ -134,8 +125,8 @@
                   </select>
                 </div>
                 <div class="col-12 col-md-4">
-                  <label for="fechaConf" class="form-label">Fecha a asistir:</label>
-                  <select id="fechaConf" class="form-select" required>
+                  <label for="fechaConf" class="form-label">Fecha a Asisitir:</label>
+                  <select id="fechaConf" class="form-select" >
                     <option selected="">--Seleccione--</option>
                     <option value="0">Viernes 13 de Octubre</option>
                     <option value="1">Sábado 14 de Octubre</option>
@@ -144,36 +135,36 @@
                 </div>
               </div>
               <!-- Total a pagar -->
-              <div class="alert alert-primary mb-3 my-3" role="alert">
-                Total a pagar: <input type="text" class="total-pagar" id="totalPagar" disabled>
+              <div class="alert alert-primary mb-3 my-3 fw-bold" role="alert">
+                  TOTAL A ABONAR: <input type="text" class="total-pagar fs-4" id="totalPagar" disabled>
+                </div>
               </div>
               <!-- Botones -->
               <div class="row g-3 justify-content-center align-content-center">
                 <div class="col-5">
-                  <button class="btn btn-compra cancelar" type="reset" id="btnClear">Borrar</button>
+                  <button class="btn btn-reset" type="reset">Borrar</button>
                 </div>
                 <div class="col-5">
-                  <button class="btn btn-compra resumen" type="button" id="btnResumen">Confirmar</button>
+                  <button class="btn btn-validar" type="button" id="validar">Validar Datos</button>
                 </div>
-                
                 <div class="col-10">
-                  <button class="btn btn-compra" type="button" id="btnComprar" data-toggle="modal" data-target="#ventana" onclick="crearTicket()">COMPRAR</button>
+                  <button class="btn btn-ticket" id="generar-ticket" type="button" data-toggle="modal" data-target="#ticket" disabled >Comprar</button>
                 </div>
                 <!-- Ticket -->
-                <div class="container ">
-                  <div class="modal" tabindex="-1" role="dialog" id="ventana">
+                <div class="container">
+                  <div class="modal" tabindex="-1" role="dialog" id="ticket">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title fw-bold">Ticket de Compra</h5>
                         </div>
                         <div class="modal-body">
-                          <p>Fecha de Compra: <input type="text" class="input-ticket" id="fechaCompra" disabled ></p>
-                          <p>Titular de la compra: <input type="text" class="input-ticket" id="titularCompra" disabled ></p>
-                          <p>Correo electrónico: <input type="text" class="input-ticket" id="correoCompra" disabled ></p>
-                          <p>Tipo y cantidad de Entrada(s): <input type="text" class="input-ticket-2" id="tipCantCompra" disabled ></p>
-                          <p>Fecha seleccionada Conf BsAs: <input type="text" class="input-ticket-2" id="fechaAsiste" disabled ></p>
-                          <p>Precio total: <input type="text" class="input-ticket" id="totalDeTicket" disabled ></p>
+                          <p class="fw-lighter">Fecha de Compra: <span class="fw-bold" id="fechaCompra"></span></p>
+                          <p class="fw-lighter">Titular de la compra: <span class="fw-bold" id="titularCompra"></span></p>
+                          <p class="fw-lighter">Correo electrónico: <span class="fw-bold" id="correoCompra"></span></p>
+                          <p class="fw-lighter">Tipo y cantidad de Entrada(s): <span class="fw-bold" id="tipCantCompra"></span></p>
+                          <p class="fw-lighter">Fecha seleccionada Conf BsAs: <span class="fw-bold" id="fechaAsiste"></span></p>
+                          <p class="fw-lighter">Precio total: <span class="fw-bold" id="totalDeTicket"></span></p>
                           <p class="text-center fw-bolder">¡GRACIAS POR TU COMPRA!</p>
                           <p class="text-center fw-bold">¡Te esperamos!</p>
                         </div>
@@ -220,57 +211,7 @@
       </ul>
     </div>
   </footer>
-
-  <script>
-    function crearTicket() {
-    const fecha = new Date();
-    var hoy = fecha.getDate();
-    var mesActual = fecha.getMonth() + 1; 
-    var anioActual = fecha.getFullYear();
-    var nombre = document.getElementById('nombre').value;
-    var apellido = document.getElementById('apellido').value;
-    var correo = document.getElementById('email').value;
-    var cant = document.getElementById('cantidad').value;
-    var cat = document.getElementById('categoria').value;
-    var fechaConf = document.getElementById('fechaConf').value;
-    var resumenTotal;
-    var fechaAsisteConf;
-
-    if (cat == 0) {
-      cat = "Estudiante";
-      resumenTotal = (200*0.2)*cant;
-    } else if (cat == 1) {
-      cat = "Trainee";
-      resumenTotal = (200*0.5)*cant;
-    } else if (cat == 2) {
-      cat = "Junior";
-      resumenTotal = (200*0.85)*cant;
-    } else if (cat == 3) {
-      cat = "Sin Categoría"
-      resumenTotal = 200*cant;
-    }
-
-    if (fechaConf == 0) {
-      fechaAsisteConf = 'Viernes 13 de Octubre';
-    }else if (fechaConf == 1) {
-      fechaAsisteConf = 'Sábado 14 de Octubre';
-    } else if (fechaConf == 2){
-      fechaAsisteConf = 'Domingo 15 de Octubre';
-    }
-
-    document.getElementById("fechaCompra").value = hoy + "/" + mesActual + "/" + anioActual;
-
-    document.getElementById("titularCompra").value = nombre + " " + apellido;
-
-    document.getElementById("correoCompra").value = correo;
-
-    document.getElementById("tipCantCompra").value = cat + " x" + cant;
-
-    document.getElementById("fechaAsiste").value = fechaAsisteConf;
-
-    document.getElementById("totalDeTicket").value = "$" + resumenTotal;
-}
-  </script>
+  <!-- Scripts -->
   <script src="../js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

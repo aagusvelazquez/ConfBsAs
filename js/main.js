@@ -1,100 +1,105 @@
-// Validacion de datos y Total a pagar de entradas
-function resumen() {
-    var nombre = document.getElementById('nombre');
-    var nombreError = document.getElementById('nombreError');
-    var apellido = document.getElementById('apellido');
-    var apellidoError = document.getElementById('apellidoError');
-    var correo = document.getElementById('email');
-    var correoError = document.getElementById('correoError');
+document.getElementById('validar').addEventListener('click', function() {
+  var nombre = document.getElementById('nombre').value;
+  var apellido = document.getElementById('apellido').value;
+  var email = document.getElementById('email').value;
+  var cant = document.getElementById('cantidad').value;
+  var cat = document.getElementById('categoria').value;
+  var asistir = document.getElementById('fechaConf');
+  var fechaAsiste;
+  var resumenTotal;
+  
+  var nombreRegex = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    var expRegNombre=/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-    var expRegApellido=/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-    var expRegCorreo=/^\w+@(\w+\.)+\w{2,4}$/;
+  var nombreValido = nombreRegex.test(nombre);
+  var apellidoValido = nombreRegex.test(apellido);
+  var emailValido = emailRegex.test(email);
 
-    // Campo Nombre
-    if (!nombre.value || !expRegNombre.exec(nombre.value)) {
-        nombreError.classList.add('visible');
-        nombre.classList.add('is-invalid');
-        nombreError.setAttribute('aria-hidden', false);
-        nombreError.setAttribute('aria-invalid', true);
-    }else {
-        nombreError.classList.add('invisible');
-        nombre.classList.remove('is-invalid');
-        nombreError.setAttribute('aria-hidden', true);
-        nombreError.setAttribute('aria-invalid', true);
+  if (nombreValido && apellidoValido && emailValido && cant) {
+    if (cat == 0) {
+      cat = "Estudiante";
+      resumenTotal = (200*0.2)*cant;
+      document.getElementById('totalPagar').value = `$` + resumenTotal;
+    } else if (cat == 1) {
+      cat = "Trainee";
+      resumenTotal = (200*0.5)*cant;
+      document.getElementById('totalPagar').value = `$` + resumenTotal;
+    } else if (cat == 2) {
+      cat = "Junior";
+      resumenTotal = (200*0.85)*cant;
+      document.getElementById('totalPagar').value = `$` + resumenTotal;
+    } else if (cat == 3) {
+      cat = "Sin Categoría"
+      resumenTotal = 200*cant;
+      document.getElementById('totalPagar').value = `$` + resumenTotal;
     }
 
-    // Campo Apellido
-    if (!apellido.value || !expRegApellido.exec(apellido.value)) {
-        apellidoError.classList.add('visible');
-        apellido.classList.add('is-invalid');
-        apellidoError.setAttribute('aria-hidden', false);
-        apellidoError.setAttribute('aria-invalid', true);
-    }else {
-        apellidoError.classList.add('invisible');
-        apellido.classList.remove('is-invalid');
-        apellidoError.setAttribute('aria-hidden', true);
-        apellidoError.setAttribute('aria-invalid', true);
-    }
+      if (asistir.value == 0) {
+          fechaAsiste = 'Viernes 13 de Octubre';
+      }else if (asistir.value == 1) {
+          fechaAsiste = 'Sábado 14 de Octubre';
+      } else if (asistir.value == 2){
+          fechaAsiste = 'Domingo 15 de Octubre';
+      }
+      document.getElementById('generar-ticket').disabled = false;
+  } else {
+      Swal.fire(
+          'ERROR!',
+          'Por favor, introduce datos válidos en todos los campos.',
+          'error'
+      )
+  }
+});
 
-    // Campo Correo
-    if (!correo.value || !expRegCorreo.exec(correo.value)) {
-        correoError.classList.add('visible');
-        correo.classList.add('is-invalid');
-        correoError.setAttribute('aria-hidden', false);
-        correoError.setAttribute('aria-invalid', true);
-    }else {
-        correoError.classList.add('invisible');
-        correo.classList.remove('is-invalid');
-        correoError.setAttribute('aria-hidden', true);
-        correoError.setAttribute('aria-invalid', true);
-    }
+document.getElementById('generar-ticket').addEventListener('click', function(event) {
+  event.preventDefault();
+  const fecha = new Date();
+  var hoy = fecha.getDate();
+  var mesActual = fecha.getMonth() + 1; 
+  var anioActual = fecha.getFullYear();
+  var nombre = document.getElementById('nombre').value;
+  var apellido = document.getElementById('apellido').value;
+  var email = document.getElementById('email').value;
+  var cant = document.getElementById('cantidad').value;
+  var cat = document.getElementById('categoria').value;
+  var asistir = document.getElementById('fechaConf').value;
+  var fechaAsiste;
+  var resumenTotal;
 
-    var cant = document.getElementById('cantidad');
-    var cantVacio = document.getElementById('cantVacio');
-    var cat = document.getElementById('categoria');
-    var fechaConf = document.getElementById('fechaConf');
-    var resumenTotal;
-    var fechaAsiste;
+  document.getElementById("fechaCompra").textContent = hoy + "/" + mesActual + "/" + anioActual;
+  document.getElementById("titularCompra").textContent = nombre + " " + apellido;
+  document.getElementById("correoCompra").textContent = email;
 
-    // Campo Cantidad y seleccion de Categoria
-    if (!cant.value) {
-        cantVacio.classList.add('visible');
-        cant.classList.add('is-invalid');
-        cantVacio.setAttribute('aria-hidden', false);
-        cantVacio.setAttribute('aria-invalid', true);
-        resumenTotal = "Falta cantidad de entradas";
-        document.getElementById('totalPagar').value = resumenTotal;
-    }else{
-        cantVacio.classList.add('invisible');
-        cant.classList.remove("is-invalid");
-        cantVacio.setAttribute('aria-hidden', true);
-        cantVacio.setAttribute('aria-invalid', true);
+  if (cat == 0) {
+    cat = "Estudiante";
+    resumenTotal = (200*0.2)*cant;
+    document.getElementById('totalDeTicket').textContent = `$` + resumenTotal;
+    document.getElementById("tipCantCompra").textContent = cat + " x" + cant;
+  } else if (cat == 1) {
+    cat = "Trainee";
+    resumenTotal = (200*0.5)*cant;
+    document.getElementById('totalDeTicket').textContent = `$` + resumenTotal;
+    document.getElementById("tipCantCompra").textContent = cat + " x" + cant;
+  } else if (cat == 2) {
+    cat = "Junior";
+    resumenTotal = (200*0.85)*cant;
+    document.getElementById('totalDeTicket').textContent = `$` + resumenTotal;
+    document.getElementById("tipCantCompra").textContent = cat + " x" + cant;
+  } else if (cat == 3) {
+    cat = "Sin Categoría"
+    resumenTotal = 200*cant;
+    document.getElementById('totalDeTicket').textContent = `$` + resumenTotal;
+    document.getElementById("tipCantCompra").textContent = cat + " x" + cant;
+  }
 
-        if (cat.value == 0) {
-            resumenTotal = (200*0.2)*cant.value;
-            document.getElementById('totalPagar').value = `$` + resumenTotal;
-        } else if (cat.value == 1) {
-            resumenTotal = (200*0.5)*cant.value;
-            document.getElementById('totalPagar').value = `$` + resumenTotal;
-        } else if (cat.value == 2) {
-            resumenTotal = (200*0.85)*cant.value;
-            document.getElementById('totalPagar').value = `$` + resumenTotal;
-        }else if (cat.value == 3) {
-            resumenTotal = 200*cant.value;
-            document.getElementById('totalPagar').value = `$` + resumenTotal;
-        }
-    }
-
-    // Campo Fecha a asistir
-    if (fechaConf.value == 0) {
-        fechaAsiste = 'Viernes 13 de Octubre';
-    }else if (fechaConf.value == 1) {
-        fechaAsiste = 'Sábado 14 de Octubre';
-    } else if (fechaConf.value == 2){
-        fechaAsiste = 'Domingo 15 de Octubre';
-    }
-}
-
-const btnClick = document.getElementById('btnResumen');
-btnClick.addEventListener('click', resumen);
+  if (asistir == 0) {
+      fechaAsiste = 'Viernes 13 de Octubre';
+      document.getElementById('fechaAsiste').textContent = fechaAsiste;
+  }else if (asistir == 1) {
+      fechaAsiste = 'Sábado 14 de Octubre';
+      document.getElementById('fechaAsiste').textContent = fechaAsiste;
+  } else if (asistir == 2){
+      fechaAsiste = 'Domingo 15 de Octubre';
+      document.getElementById('fechaAsiste').textContent = fechaAsiste;
+  }
+});
