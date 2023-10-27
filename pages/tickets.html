@@ -143,13 +143,14 @@
               <!-- Botones -->
               <div class="row g-3 justify-content-center align-content-center">
                 <div class="col-5">
-                  <button class="btn btn-reset" type="reset">Borrar</button>
+                  <button class="btn btn-reset" type="reset">Limpiar</button>
                 </div>
                 <div class="col-5">
                   <button class="btn btn-validar" type="button" id="validar">Validar Datos</button>
                 </div>
-                <div class="col-10">
+                <div class="col-lg-10">
                   <button class="btn btn-ticket" id="generar-ticket" type="button" data-toggle="modal" data-target="#ticket" disabled >Comprar</button>
+                </div>
                 </div>
                 <!-- Ticket -->
                 <div class="container">
@@ -159,7 +160,7 @@
                         <div class="modal-header">
                           <h5 class="modal-title fw-bold">Ticket de Compra</h5>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" id="contenido">
                           <p class="fw-lighter">Fecha de Compra: <span class="fw-bold" id="fechaCompra"></span></p>
                           <p class="fw-lighter">Titular de la compra: <span class="fw-bold" id="titularCompra"></span></p>
                           <p class="fw-lighter">Correo electrónico: <span class="fw-bold" id="correoCompra"></span></p>
@@ -214,6 +215,7 @@
   </footer>
   <!-- Scripts -->
   <script src="../js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>

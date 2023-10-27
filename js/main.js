@@ -104,25 +104,9 @@ document.getElementById('generar-ticket').addEventListener('click', function(eve
   }
 });
 
-document.getElementById('descargarPDF').addEventListener('click', function() {
-  var nombre = document.getElementById('nombre').value;
-  var apellido = document.getElementById('apellido').value;
-  var email = document.getElementById('email').value;
-  
-  // Crear un objeto jsPDF
+document.getElementById('descargarPDF').addEventListener('click', function () {
   var doc = new jsPDF();
-
-  // Obtener el contenido HTML del modelo
-  var contenidoModelo = document.getElementById('modelo').innerHTML;
-
-  // Agregar los datos del formulario al modelo
-  document.getElementById('nombre-modelo').textContent = nombre;
-  document.getElementById('apellido-modelo').textContent = apellido;
-  document.getElementById('email-modelo').textContent = email;
-
-  // Agregar el contenido HTML al documento PDF
-  doc.fromHTML(contenidoModelo, 15, 15);
-
-  // Guardar el documento PDF como un archivo descargable llamado "formulario.pdf"
-  doc.save('formulario.pdf');
+  var contenido = document.getElementById("contenido").innerHTML;
+  doc.fromHTML(contenido, 15, 15);
+  doc.save('Ticket de Compra - ConfBsAs.pdf');
 });
