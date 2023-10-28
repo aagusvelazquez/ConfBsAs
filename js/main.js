@@ -51,8 +51,7 @@ document.getElementById('validar').addEventListener('click', function() {
   }
 });
 
-document.getElementById('generar-ticket').addEventListener('click', function(event) {
-  event.preventDefault();
+document.getElementById('generar-ticket').addEventListener('click', function() {
   const fecha = new Date();
   var hoy = fecha.getDate();
   var mesActual = fecha.getMonth() + 1; 
