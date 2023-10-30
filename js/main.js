@@ -105,7 +105,28 @@ document.getElementById('generar-ticket').addEventListener('click', function() {
 
 document.getElementById('descargarPDF').addEventListener('click', function () {
   var doc = new jsPDF();
+
+  var x = 15;
+  var y = 20;
+  var tamañoCuadradoHoriz = 110;
+  var tamañoCuadradoVert = 85;
+
+  doc.rect(x, y, tamañoCuadradoHoriz, tamañoCuadradoVert);
+
+  doc.setFontSize(20);
+  doc.setFont('bold');
+  doc.text("Ticket de Compra", 70, 30, null, null, "center");
+
   var contenido = document.getElementById("contenido").innerHTML;
-  doc.fromHTML(contenido, 15, 15);
-  doc.save('Ticket de Compra - ConfBsAs.pdf');
+  doc.fromHTML(contenido, 20, 30);
+
+  doc.setFontSize(16);
+  doc.setFont('bold');
+  doc.text("¡GRACIAS POR TU COMPRA!", 70, 90, null, null, "center");
+
+  doc.setFontSize(14);
+  doc.setFont('bold');
+  doc.text("¡Te esperamos!", 70, 98, null, null, "center");
+
+  doc.save('Ticket de Compra - Conf BsAs.pdf');
 });

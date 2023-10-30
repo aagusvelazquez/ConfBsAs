@@ -11,9 +11,8 @@
 }
 /* Area principal */
 .tickets {
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 2em;
+    width: 60%;
+    margin: 2em auto;
 }
 /* Informacion de Entradas */
 .entradas {
@@ -21,16 +20,8 @@
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-}
-.entrada {
-    width: 210px;
-    height: 200px;
-    margin: .5em;
-    padding: .5em 1em;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    margin: 2em;
 }
 .entrada-estudiante {
     border: 3px solid #a5c5e7 !important;
@@ -77,6 +68,141 @@
         color:gray;
     }
 }
+.card {
+    position: relative;
+    width: 270px;
+    height: 350px;
+    border: 0 !important;
+    margin: auto 0;
+}
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px black;
+}
+.card .front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+.card .front h3{
+    position: absolute;
+    top: 6em;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    text-align: center;
+}
+/* Estudiante */
+.card .back-estudiante {
+    transform: perspective(600px) rotateY(180deg);
+    background-color: #a5c5e7;
+    padding: 15px;
+    color: rgb(3, 35, 54);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 5px 10px black;
+}
+.card .back-estudiante h3{
+    font-weight: bold;
+}
+.card .back-estudiante span{
+    font-size: larger;
+    font-weight: bold;
+    margin-top:.3em;
+}
+.card .back-estudiante hr {
+    background-color: rgb(3, 35, 54);
+    width: 85%;
+    margin: 25px auto;
+}
+.card .back-estudiante .entrada-recordatorio {
+    font-size: small;
+    color: rgb(83, 82, 82);
+}
+/* Trainee */
+.card .back-trainee {
+    transform: perspective(600px) rotateY(180deg);
+    background-color: #a5e7af;
+    padding: 15px;
+    color: rgb(6, 54, 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 5px 10px black;
+}
+.card .back-trainee h3{
+    font-weight: bold;
+}
+.card .back-trainee span{
+    font-size: larger;
+    font-weight: bold;
+    margin-top:.3em;
+}
+.card .back-trainee hr {
+    background-color: rgb(6, 54, 3);
+    width: 85%;
+    margin: 25px auto;
+}
+.card .back-trainee .entrada-recordatorio {
+    font-size: small;
+    color: rgb(83, 82, 82);
+}
+/* Junior */
+.card .back-junior {
+    transform: perspective(600px) rotateY(180deg);
+    background-color: #e3e7a5;
+    padding: 15px;
+    color: rgb(54, 52, 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 5px 10px black;
+}
+.card .back-junior h3{
+    font-weight: bold;
+}
+.card .back-junior span{
+    font-size: larger;
+    font-weight: bold;
+    margin-top:.3em;
+}
+.card .back-junior hr {
+    background-color: rgb(54, 52, 3);
+    width: 85%;
+    margin: 25px auto;
+}
+.card .back-junior .entrada-recordatorio {
+    font-size: small;
+    color: rgb(83, 82, 82);
+}
+.card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .back-estudiante{
+    transform: perspective(600px) rotateY(360deg);
+}
+.card:hover .back-trainee{
+    transform: perspective(600px) rotateY(360deg);
+}
+.card:hover .back-junior{
+    transform: perspective(600px) rotateY(360deg);
+}
 /* Formulario de compra */
 .titulo-form {
     text-align: center;
@@ -97,6 +223,7 @@
     background-color: #cce5ff !important;
     color: #225c99 !important;
     height: 2em;
+    width: 100%;
     border: none;
 }
 /* Botones del Formulario */
@@ -161,7 +288,7 @@
 /* MEDIA QUERIES */
 @media screen and (max-width: 430px){
     .tickets {
-        width: 90%;
+        width: 85%;
         margin: 1.5em;
         margin-top: 2em;
     }
