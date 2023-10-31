@@ -129,4 +129,5 @@ document.getElementById('descargarPDF').addEventListener('click', function () {
   doc.text("¡Te esperamos!", 70, 98, null, null, "center");
 
   doc.save('Ticket de Compra - Conf BsAs.pdf');
+  document.getElementById("form").reset();
 });

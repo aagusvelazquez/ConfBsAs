@@ -18,6 +18,7 @@ document.getElementById('btnOrador').addEventListener('click', function() {
         'Gracias por inscribirte como orador! Nos estaremos comunicando con vos al correo que nos indicaste.',
         'success'
       )
+      document.getElementById("formulario-orador").reset();
     } else {
       Swal.fire(
         'ERROR!',
