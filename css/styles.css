@@ -30,28 +30,6 @@
     color: var(--textcolor);
     padding: 10px 15px;
 }
-#nombreError,
-#apellidoError,
-#correoError,
-#temaError {
-    display: none;
-    font-size: 0.8em;
-}
-#nombreError.visible {
-    display: block;
-}
-#apellidoError.visible {
-    display: block;
-}
-#correoError.visible {
-    display: block;
-}
-#temaError.visible {
-    display: block;
-}
-input.invalido {
-    border-color: red;
-}
 #tema-charla {
     width: 100%;
     height: 10em;
