@@ -46,161 +46,157 @@
   </header>
   <!-- Contenido principal -->
   <main>
-    <section>
-      <div class="tickets">
-        <div class="form-compra">
-          <!-- Informacion de entradas -->
-          <div class="row entradas">
-            <div class="col-md-11">
-              <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Estudiante -->
-                <div class="col">
-                  <div class="card">
-                    <div class="face front">
-                      <img src="../assets/img/card1.jpg" alt="">
-                      <h3>ESTUDIANTE</h3>
+    <!-- Informacion de entradas -->
+    <div class="row entradas my-4">
+      <div class="col-md-11">
+        <div class="row row-cols-1 row-cols-md-3 justify-content-center">
+          <!-- Estudiante -->
+          <div class="col">
+            <div class="card">
+              <div class="face front">
+                <img src="../assets/img/card1.jpg" alt="">
+                <h3>ESTUDIANTE</h3>
+              </div>
+              <div class="face back-estudiante">
+                <h3>ESTUDIANTE</h3>
+                <p>Tiene un descuento de</p>
+                <span>80%</span>
+                <hr>
+                <p class="entrada-recordatorio">* presentar la documentacion que lo acredite</p>
+              </div>
+            </div>
+          </div>
+          <!-- Trainee -->
+          <div class="col">
+            <div class="card">
+              <div class="face front">
+                <img src="../assets/img/card2.jpg" alt="">
+                <h3>TRAINEE</h3>
+              </div>
+              <div class="face back-trainee">
+                <h3>TRAINEE</h3>
+                <p>Tiene un descuento de</p>
+                <span>50%</span>
+                <hr>
+                <p class="entrada-recordatorio">* presentar la documentacion que lo acredite</p>
+              </div>
+            </div>
+          </div>
+          <!-- Junior -->
+          <div class="col">
+            <div class="card">
+              <div class="face front">
+                <img src="../assets/img/card3.jpg" alt="">
+                <h3>JUNIOR</h3>
+              </div>
+              <div class="face back-junior">
+                <h3>JUNIOR</h3>
+                <p>Tiene un descuento de</p>
+                <span>15%</span>
+                <hr>
+                <p class="entrada-recordatorio">* presentar la documentacion que lo acredite</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tickets">
+      <!-- Formulario de Compra -->
+      <div class="form-compra">
+        <div class="titulo-form">
+          <h4>VENTA</h4>
+          <h2 class="fs-1">VALOR DEL TICKET $200</h2>
+        </div>
+        <div class="formulario">
+          <form action="" id="form">
+            <!-- Nombre y Apellido -->
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <input type="text" class="form-control" placeholder="Apellido" id="apellido" required>
+              </div>
+            </div>
+            <!-- Correo -->
+            <div class="mb-3 my-3">
+              <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" inputmode="email" required>
+            </div>
+            <!-- Cantidad, Categoría y Fecha-->
+            <div class="row g-2">
+              <div class="col-12 col-md-4">
+                <label for="cantidad" class="form-label">Cantidad</label>
+                <input type="text" class="form-control" id="cantidad" placeholder="Cantidad de entradas" inputmode="n">
+              </div>
+              <div class="col-12 col-md-4">
+                <label for="categoria" class="form-label">Categoría</label>
+                <select id="categoria" class="form-select">
+                  <option selected="">--Seleccione--</option>
+                  <option value="0">Estudiante</option>
+                  <option value="1">Trainee</option>
+                  <option value="2">Junior</option>
+                  <option value="3">Sin categoría</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
+                <label for="fechaConf" class="form-label">Fecha a Asisitir:</label>
+                <select id="fechaConf" class="form-select">
+                  <option selected="">--Seleccione--</option>
+                  <option value="0">Viernes 13 de Octubre</option>
+                  <option value="1">Sábado 14 de Octubre</option>
+                  <option value="2">Domingo 15 de Octubre</option>
+                </select>
+              </div>
+            </div>
+            <!-- Total a pagar -->
+            <div class="alert alert-primary mb-3 my-3 fw-bold" role="alert">
+                TOTAL A ABONAR: <input type="text" class="total-pagar fs-4" id="totalPagar" disabled>
+            </div>
+            <!-- Botones -->
+            <div class="row g-3 justify-content-center align-content-center">
+              <div class="col-4">
+                <button class="btn btn-reset" type="reset">Limpiar</button>
+              </div>
+              <div class="col-4">
+                <button class="btn btn-validar" type="button" id="validar">Validar</button>
+              </div>
+              <div class="col-4">
+                <button class="btn btn-ticket" id="generar-ticket" type="button" data-toggle="modal" data-target="#ticket" disabled >Comprar</button>
+              </div>
+            </div>
+            <!-- Ticket -->
+            <div class="container">
+              <div class="modal" tabindex="-1" role="dialog" id="ticket">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title fw-bold" id="titulo">Ticket de Compra</h5>
                     </div>
-                    <div class="face back-estudiante">
-                      <h3>ESTUDIANTE</h3>
-                      <p>Tiene un descuento de</p>
-                      <span>80%</span>
-                      <hr>
-                      <p class="entrada-recordatorio">* presentar la documentacion que lo acredite</p>
+                    <div class="modal-body">
+                      <div id="contenido">
+                        <p class="fw-lighter">Fecha de Compra: <span class="fw-bold" id="fechaCompra"></span></p>
+                        <p class="fw-lighter">Titular de la compra: <span class="fw-bold" id="titularCompra"></span></p>
+                        <p class="fw-lighter">Correo electrónico: <span class="fw-bold" id="correoCompra"></span></p>
+                        <p class="fw-lighter">Tipo y cantidad de Entrada(s): <span class="fw-bold" id="tipCantCompra"></span></p>
+                        <p class="fw-lighter">Fecha seleccionada Conf BsAs: <span class="fw-bold" id="fechaAsiste"></span></p>
+                        <p class="fw-lighter">Precio total: <span class="fw-bold" id="totalDeTicket"></span></p>
+                      </div>
+                      <p class="text-center fw-bolder">¡GRACIAS POR TU COMPRA!</p>
+                      <p class="text-center fw-bold">¡Te esperamos!</p>
                     </div>
-                  </div>
-                </div>
-                <!-- Trainee -->
-                <div class="col">
-                  <div class="card">
-                    <div class="face front">
-                      <img src="../assets/img/card2.jpg" alt="">
-                      <h3>TRAINEE</h3>
-                    </div>
-                    <div class="face back-trainee">
-                      <h3>TRAINEE</h3>
-                      <p>Tiene un descuento de</p>
-                      <span>50%</span>
-                      <hr>
-                      <p class="entrada-recordatorio">* presentar la documentacion que lo acredite</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Junior -->
-                <div class="col">
-                  <div class="card">
-                    <div class="face front">
-                      <img src="../assets/img/card3.jpg" alt="">
-                      <h3>JUNIOR</h3>
-                    </div>
-                    <div class="face back-junior">
-                      <h3>JUNIOR</h3>
-                      <p>Tiene un descuento de</p>
-                      <span>15%</span>
-                      <hr>
-                      <p class="entrada-recordatorio">* presentar la documentacion que lo acredite</p>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-descarga-model" id="descargarPDF" >Descargar</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Formulario de Compra -->
-          <div class="titulo-form">
-            <h4>VENTA</h4>
-            <h2 class="fs-1">VALOR DEL TICKET $200</h2>
-          </div>
-          <div class="formulario">
-            <form action="" id="form">
-              <!-- Nombre y Apellido -->
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
-                </div>
-                <div class="col-12 col-md-6">
-                  <input type="text" class="form-control" placeholder="Apellido" id="apellido" required>
-                </div>
-              </div>
-              <!-- Correo -->
-              <div class="mb-3 my-3">
-                <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" inputmode="email" required>
-              </div>
-              <!-- Cantidad, Categoría y Fecha-->
-              <div class="row g-2">
-                <div class="col-12 col-md-4">
-                  <label for="cantidad" class="form-label">Cantidad</label>
-                  <input type="text" class="form-control" id="cantidad" placeholder="Cantidad de entradas" inputmode="n">
-                </div>
-                <div class="col-12 col-md-4">
-                  <label for="categoria" class="form-label">Categoría</label>
-                  <select id="categoria" class="form-select">
-                    <option selected="">--Seleccione--</option>
-                    <option value="0">Estudiante</option>
-                    <option value="1">Trainee</option>
-                    <option value="2">Junior</option>
-                    <option value="3">Sin categoría</option>
-                  </select>
-                </div>
-                <div class="col-12 col-md-4">
-                  <label for="fechaConf" class="form-label">Fecha a Asisitir:</label>
-                  <select id="fechaConf" class="form-select">
-                    <option selected="">--Seleccione--</option>
-                    <option value="0">Viernes 13 de Octubre</option>
-                    <option value="1">Sábado 14 de Octubre</option>
-                    <option value="2">Domingo 15 de Octubre</option>
-                  </select>
-                </div>
-              </div>
-              <!-- Total a pagar -->
-              <div class="alert alert-primary mb-3 my-3 fw-bold" role="alert">
-                  TOTAL A ABONAR: <input type="text" class="total-pagar fs-4" id="totalPagar" disabled>
-                </div>
-              </div>
-              <!-- Botones -->
-              <div class="row g-3 justify-content-center align-content-center">
-                <div class="col-5">
-                  <button class="btn btn-reset" type="reset">Limpiar</button>
-                </div>
-                <div class="col-5">
-                  <button class="btn btn-validar" type="button" id="validar">Validar</button>
-                </div>
-                <div class="col-lg-10">
-                  <button class="btn btn-ticket" id="generar-ticket" type="button" data-toggle="modal" data-target="#ticket" disabled >Comprar</button>
-                </div>
-                </div>
-                <!-- Ticket -->
-                <div class="container">
-                  <div class="modal" tabindex="-1" role="dialog" id="ticket">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title fw-bold" id="titulo">Ticket de Compra</h5>
-                        </div>
-                        <div class="modal-body">
-                          <div id="contenido">
-                            <p class="fw-lighter">Fecha de Compra: <span class="fw-bold" id="fechaCompra"></span></p>
-                            <p class="fw-lighter">Titular de la compra: <span class="fw-bold" id="titularCompra"></span></p>
-                            <p class="fw-lighter">Correo electrónico: <span class="fw-bold" id="correoCompra"></span></p>
-                            <p class="fw-lighter">Tipo y cantidad de Entrada(s): <span class="fw-bold" id="tipCantCompra"></span></p>
-                            <p class="fw-lighter">Fecha seleccionada Conf BsAs: <span class="fw-bold" id="fechaAsiste"></span></p>
-                            <p class="fw-lighter">Precio total: <span class="fw-bold" id="totalDeTicket"></span></p>
-                          </div>
-                          <p class="text-center fw-bolder">¡GRACIAS POR TU COMPRA!</p>
-                          <p class="text-center fw-bold">¡Te esperamos!</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn btn-descarga-model" id="descargarPDF" >Descargar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
   </main>
   <!-- Pie de pagina -->
   <footer id="miFooter">

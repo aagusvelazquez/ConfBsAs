@@ -19,9 +19,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
     width: 100%;
-    margin: 2em;
+    margin: 2em auto;
 }
 .entrada-estudiante {
     border: 3px solid #a5c5e7 !important;
@@ -68,12 +67,17 @@
         color:gray;
     }
 }
+.col {
+    padding: 0 !important;
+    width: 16rem !important;
+    height: 20rem !important;
+    margin: 1.5rem;
+}
 .card {
     position: relative;
-    width: 270px;
-    height: 350px;
+    width: 16rem;
+    height: 20rem;
     border: 0 !important;
-    margin: auto 0;
 }
 .card .face {
     position: absolute;
