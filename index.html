@@ -179,25 +179,25 @@
                 <!-- Nombre y Apellido -->
                 <div class="row g-3">
                   <div class="col-12 col-md-6">
-                    <input type="text" class="form-control" placeholder="Nombre" id="nombreFormOrador" minlength="2">
+                    <input type="text" class="form-control" placeholder="Nombre" id="nombreFormOrador" name="nombreOrador" minlength="2">
                   </div>
                   <div class="col-12 col-md-6">
-                    <input type="text" class="form-control" placeholder="Apellido" id="apellidoFormOrador" minlength="2">
+                    <input type="text" class="form-control" placeholder="Apellido" id="apellidoFormOrador" name="apellidoOrador" minlength="2">
                   </div>
                 </div>
                 <!-- Correo -->
                 <div class="mb-3 my-3">
-                  <input type="email" class="form-control" id="emailFormOrador" placeholder="nombre@ejemplo.com">
+                  <input type="email" class="form-control" id="emailFormOrador" name="emailOrador" placeholder="nombre@ejemplo.com">
                 </div>
                 <!-- Tema de Charla -->
                 <div class="row">
                   <div class="col-12">
-                    <textarea name="" id="tema-charla" placeholder="Sobre qué queres hablar?" minlength="4"></textarea>
+                    <textarea name="tema" id="tema-charla" placeholder="Sobre qué queres hablar?" minlength="4" maxlength="140"></textarea>
                   </div>
                 </div>
                 <!-- Boton -->
                 <div class="row">
-                  <button class="btn-color" type="button" id="btnOrador">Enviar</button>
+                  <button class="btn-color" type="submit" id="btnOrador">Enviar</button>
                 </div>
               </form>
             </div>

@@ -116,39 +116,39 @@
             <!-- Nombre y Apellido -->
             <div class="row g-3">
               <div class="col-12 col-md-6">
-                <input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
+                <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre" required>
               </div>
               <div class="col-12 col-md-6">
-                <input type="text" class="form-control" placeholder="Apellido" id="apellido" required>
+                <input type="text" class="form-control" placeholder="Apellido" id="apellido" name="apellido" required>
               </div>
             </div>
             <!-- Correo -->
             <div class="mb-3 my-3">
-              <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" inputmode="email" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" inputmode="email" required>
             </div>
             <!-- Cantidad, Categoría y Fecha-->
             <div class="row g-2">
               <div class="col-12 col-md-4">
                 <label for="cantidad" class="form-label">Cantidad</label>
-                <input type="text" class="form-control" id="cantidad" placeholder="Cantidad de entradas" inputmode="n">
+                <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad de entradas" inputmode="n" required>
               </div>
               <div class="col-12 col-md-4">
                 <label for="categoria" class="form-label">Categoría</label>
-                <select id="categoria" class="form-select">
-                  <option selected="">--Seleccione--</option>
-                  <option value="0">Estudiante</option>
-                  <option value="1">Trainee</option>
-                  <option value="2">Junior</option>
-                  <option value="3">Sin categoría</option>
+                <select id="categoria" name="categoria" class="form-select" required>
+                  <option selected>--Seleccione--</option>
+                  <option value="Estudiante">Estudiante</option>
+                  <option value="Trainee">Trainee</option>
+                  <option value="Junior">Junior</option>
+                  <option value="SinCat">Sin categoría</option>
                 </select>
               </div>
               <div class="col-12 col-md-4">
                 <label for="fechaConf" class="form-label">Fecha a Asisitir:</label>
-                <select id="fechaConf" class="form-select">
-                  <option selected="">--Seleccione--</option>
-                  <option value="0">Viernes 13 de Octubre</option>
-                  <option value="1">Sábado 14 de Octubre</option>
-                  <option value="2">Domingo 15 de Octubre</option>
+                <select id="fechaConf" name="fechaConf" class="form-select" required>
+                  <option selected>--Seleccione--</option>
+                  <option value="Vie13Oct">Viernes 13 de Octubre</option>
+                  <option value="Sab14Oct">Sábado 14 de Octubre</option>
+                  <option value="Dom15Oct">Domingo 15 de Octubre</option>
                 </select>
               </div>
             </div>
@@ -165,7 +165,7 @@
                 <button class="btn btn-validar" type="button" id="validar">Validar</button>
               </div>
               <div class="col-4">
-                <button class="btn btn-ticket" id="generar-ticket" type="button" data-toggle="modal" data-target="#ticket" disabled >Comprar</button>
+                <button class="btn btn-ticket" id="generar-ticket" type="submit" data-toggle="modal" data-target="#ticket" disabled >Comprar</button>
               </div>
             </div>
             <!-- Ticket -->
