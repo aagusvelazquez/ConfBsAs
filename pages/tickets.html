@@ -135,25 +135,25 @@
               <div class="col-12 col-md-4">
                 <label for="categoria" class="form-label">Categoría</label>
                 <select id="categoria" name="categoria" class="form-select" required>
-                  <option selected>--Seleccione--</option>
+                  <option selected disabled>--Seleccione--</option>
                   <option value="Estudiante">Estudiante</option>
                   <option value="Trainee">Trainee</option>
                   <option value="Junior">Junior</option>
-                  <option value="SinCat">Sin categoría</option>
+                  <option value="Sin categoria">Sin categoría</option>
                 </select>
               </div>
               <div class="col-12 col-md-4">
                 <label for="fechaConf" class="form-label">Fecha a Asisitir:</label>
                 <select id="fechaConf" name="fechaConf" class="form-select" required>
-                  <option selected>--Seleccione--</option>
-                  <option value="Vie13Oct">Viernes 13 de Octubre</option>
-                  <option value="Sab14Oct">Sábado 14 de Octubre</option>
-                  <option value="Dom15Oct">Domingo 15 de Octubre</option>
+                  <option selected disabled>--Seleccione--</option>
+                  <option value="Viernes 13 de Octubre">Viernes 13 de Octubre</option>
+                  <option value="Sabado 14 de Octubre">Sábado 14 de Octubre</option>
+                  <option value="Domingo 15 de Octubre">Domingo 15 de Octubre</option>
                 </select>
               </div>
             </div>
             <!-- Total a pagar -->
-            <div class="alert alert-primary mb-3 my-3 fw-bold" role="alert">
+            <div class="alert alert-primary mb-3 my-3 p-2" role="alert">
                 TOTAL A ABONAR: <input type="text" class="total-pagar fs-4" id="totalPagar" disabled>
             </div>
             <!-- Botones -->
@@ -165,7 +165,7 @@
                 <button class="btn btn-validar" type="button" id="validar">Validar</button>
               </div>
               <div class="col-4">
-                <button class="btn btn-ticket" id="generar-ticket" type="submit" data-toggle="modal" data-target="#ticket" disabled >Comprar</button>
+                <button class="btn btn-ticket" id="generar-ticket" type="button" data-toggle="modal" data-target="#ticket" disabled>Comprar</button>
               </div>
             </div>
             <!-- Ticket -->
@@ -185,6 +185,7 @@
                         <p class="fw-lighter">Fecha seleccionada Conf BsAs: <span class="fw-bold" id="fechaAsiste"></span></p>
                         <p class="fw-lighter">Precio total: <span class="fw-bold" id="totalDeTicket"></span></p>
                       </div>
+                      <p class="text-center">¡No te olvides descargar tu comprobante antes de cerrar!</p>
                       <p class="text-center fw-bolder">¡GRACIAS POR TU COMPRA!</p>
                       <p class="text-center fw-bold">¡Te esperamos!</p>
                     </div>

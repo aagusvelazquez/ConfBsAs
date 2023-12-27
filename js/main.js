@@ -21,11 +21,11 @@ document.getElementById('validar').addEventListener('click', function() {
     if (categoria === "Estudiante") {
       resumenTotal = (200*0.2) * cantidad;
       document.getElementById('totalPagar').value = `$${resumenTotal}`;
-      if (asistir === "Vie13Oct") {
+      if (asistir === "Viernes 13 de Octubre") {
         fechaAsiste = 'Viernes 13 de Octubre';
-      } else if (asistir === "Sab14Oct") {
+      } else if (asistir === "Sabado 14 de Octubre") {
         fechaAsiste = 'Sábado 14 de Octubre';
-      } else if (asistir === "Dom15Oct"){
+      } else if (asistir === "Domingo 15 de Octubre"){
         fechaAsiste = 'Domingo 15 de Octubre';
       }
       document.getElementById('generar-ticket').disabled = false;
@@ -33,11 +33,11 @@ document.getElementById('validar').addEventListener('click', function() {
     if (categoria === "Trainee") {
       resumenTotal = (200*0.5) * cantidad;
       document.getElementById('totalPagar').value = `$${resumenTotal}`;
-      if (asistir === "Vie13Oct") {
+      if (asistir === "Viernes 13 de Octubre") {
         fechaAsiste = 'Viernes 13 de Octubre';
-      } else if (asistir === "Sab14Oct") {
+      } else if (asistir === "Sabado 14 de Octubre") {
         fechaAsiste = 'Sábado 14 de Octubre';
-      } else if (asistir === "Dom15Oct"){
+      } else if (asistir === "Domingo 15 de Octubre"){
         fechaAsiste = 'Domingo 15 de Octubre';
       }
       document.getElementById('generar-ticket').disabled = false;
@@ -45,28 +45,27 @@ document.getElementById('validar').addEventListener('click', function() {
     if (categoria === "Junior") {
       resumenTotal = (200*0.85) * cantidad;
       document.getElementById('totalPagar').value = `$${resumenTotal}`;
-      if (asistir === "Vie13Oct") {
+      if (asistir === "Viernes 13 de Octubre") {
         fechaAsiste = 'Viernes 13 de Octubre';
-      } else if (asistir === "Sab14Oct") {
+      } else if (asistir === "Sabado 14 de Octubre") {
         fechaAsiste = 'Sábado 14 de Octubre';
-      } else if (asistir === "Dom15Oct"){
+      } else if (asistir === "Domingo 15 de Octubre"){
         fechaAsiste = 'Domingo 15 de Octubre';
       }
       document.getElementById('generar-ticket').disabled = false;
     }
-    if (categoria === "SinCat") {
+    if (categoria === "Sin categoria") {
       resumenTotal = 200 * cantidad;
       document.getElementById('totalPagar').value = `$${resumenTotal}`;
-      if (asistir === "Vie13Oct") {
+      if (asistir === "Viernes 13 de Octubre") {
         fechaAsiste = 'Viernes 13 de Octubre';
-      } else if (asistir === "Sab14Oct") {
+      } else if (asistir === "Sabado 14 de Octubre") {
         fechaAsiste = 'Sábado 14 de Octubre';
-      } else if (asistir === "Dom15Oct"){
+      } else if (asistir === "Domingo 15 de Octubre"){
         fechaAsiste = 'Domingo 15 de Octubre';
       }
       document.getElementById('generar-ticket').disabled = false;
     }
-
   } else {
     Swal.fire(
       'ERROR!',
@@ -78,17 +77,17 @@ document.getElementById('validar').addEventListener('click', function() {
 
 document.getElementById('generar-ticket').addEventListener('click', function() {
   const fecha = new Date();
-  var hoy = fecha.getDate();
-  var mesActual = fecha.getMonth() + 1; 
-  var anioActual = fecha.getFullYear();
-  var nombre = document.getElementById('nombre').value;
-  var apellido = document.getElementById('apellido').value;
-  var email = document.getElementById('email').value;
-  var cant = document.getElementById('cantidad').value;
-  var categoria = document.getElementById('categoria').value;
-  var asistir = document.getElementById('fechaConf').value;
-  var fechaAsiste;
-  var resumenTotal;
+  let hoy = fecha.getDate();
+  let mesActual = fecha.getMonth() + 1; 
+  let anioActual = fecha.getFullYear();
+  let nombre = document.getElementById('nombre').value;
+  let apellido = document.getElementById('apellido').value;
+  let email = document.getElementById('email').value;
+  let cant = document.getElementById('cantidad').value;
+  let categoria = document.getElementById('categoria').value;
+  let asistir = document.getElementById('fechaConf').value;
+  let fechaAsiste;
+  let resumenTotal;
 
   document.getElementById("fechaCompra").textContent = hoy + "/" + mesActual + "/" + anioActual;
   document.getElementById("titularCompra").textContent = nombre + " " + apellido;
@@ -113,22 +112,22 @@ document.getElementById('generar-ticket').addEventListener('click', function() {
     document.getElementById('totalDeTicket').textContent = `$` + resumenTotal;
     document.getElementById("tipCantCompra").textContent = categoria + " x" + cant;
   }
-  if (categoria === "SinCat") {
+  if (categoria === "Sin categoria") {
     categoria = "Sin Categoría"
     resumenTotal = 200*cant;
     document.getElementById('totalDeTicket').textContent = `$` + resumenTotal;
     document.getElementById("tipCantCompra").textContent = categoria + " x" + cant;
   }
 
-  if (asistir === "Vie13Oct") {
+  if (asistir === "Viernes 13 de Octubre") {
     fechaAsiste = 'Viernes 13 de Octubre';
     document.getElementById('fechaAsiste').textContent = fechaAsiste;
   }
-  if (asistir === "Sab14Oct") {
+  if (asistir === "Sabado 14 de Octubre") {
     fechaAsiste = 'Sábado 14 de Octubre';
     document.getElementById('fechaAsiste').textContent = fechaAsiste;
   }
-  if (asistir === "Dom15Oct"){
+  if (asistir === "Domingo 15 de Octubre"){
     fechaAsiste = 'Domingo 15 de Octubre';
     document.getElementById('fechaAsiste').textContent = fechaAsiste;
   }

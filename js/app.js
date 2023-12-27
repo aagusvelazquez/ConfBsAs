@@ -1,4 +1,3 @@
-
 document.getElementById('btnOrador').addEventListener('click', function() {
     var nombre = document.getElementById('nombreFormOrador').value;
     var apellido = document.getElementById('apellidoFormOrador').value;
@@ -24,6 +23,6 @@ document.getElementById('btnOrador').addEventListener('click', function() {
         'ERROR!',
         'Por favor, introduce datos válidos en todos los campos solicitados.',
         'error'
-    )
+      )
     }
-  });
+});
